@@ -1,0 +1,3 @@
+
+/usr/local/bin/filebench -f fileserver.f > joey-4-12-
+
