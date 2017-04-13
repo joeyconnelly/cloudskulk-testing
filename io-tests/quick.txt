@@ -1,3 +1,3 @@
 
-/usr/local/bin/filebench -f fileserver.f 2> /dev/null 1> joey-4-12-bareMetal-standalone.data
+/usr/local/bin/filebench -f fileserver.f 2> /dev/null 1> joey-4-12-level1-12G-smponly-
 
