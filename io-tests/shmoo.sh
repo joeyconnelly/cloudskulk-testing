@@ -1,7 +1,10 @@
 #!/bin/bash
-numRuns=5
-fileName=data_
+min=1
+max=100
+base=2
+fileName=dataShmoo_
 tempCopy=temp
+sizeText='set $filesize='
 inputText="bigfileset populated:"
 outputText="IO Summary:"
 runProg="/usr/local/bin/filebench -f"
@@ -24,13 +27,20 @@ rawFile=$fileName$currTime.raw
 csvFile=$fileName$currTime.csv
 title="Run[#],TestType[test.f],Files[#],TotalSize[MB],TotalOps[#],Throughput[ops/s],Latency[ms/op]"
 quickPrint $title $csvFile
+testID=0
 for myTest in "${testFiles[@]}"
 do
 	#
-	# run each filebench test numRuns specified times
+	# iterate each filebench test increasing file sizes by given base
 	#
-	for (( i=1; i<=$numRuns; i++ ))
+	for (( newSize=$min; newSize<=$max; newSize*=$base ))
 	do
+		#
+		# change file size inside .f file, then execute filebench
+		#	
+		newText="$sizeText$newSize"
+		newText+="k"
+		sed --in-place "/$sizeText/c$newText" $myTest
 		$runProg $myTest 1> $tempCopy 2> /dev/null
 
 		#
@@ -39,15 +49,16 @@ do
 		numFiles=$(sed "/$inputText/!d" $tempCopy | awk -F ' ' '{print $4}')
 		totalSize=$(sed "/$inputText/!d" $tempCopy | awk -F ' ' '{print $18}')
 		totalOps=$(sed "/$outputText/!d" $tempCopy | awk -F ' ' '{print $4}')
-                throughPut=$(sed "/$outputText/!d" $tempCopy | awk -F ' ' '{print $6}')
+		throughPut=$(sed "/$outputText/!d" $tempCopy | awk -F ' ' '{print $6}')
 		latency=$(sed "/$outputText/!d" $tempCopy | awk -F ' ' '{print $11}')
 
 		#
 		# output results to .raw + .csv + console
 		#
-		line="$i,$myTest,$numFiles,$totalSize,$totalOps,$throughPut,$latency"
+		line="$testID,$myTest,$numFiles,$totalSize,$totalOps,$throughPut,$latency"
 		quickPrint $line $csvFile
 		cat $tempCopy >> $rawFile
+		let testID++
 	done
 done
 rm -f $tempCopy
