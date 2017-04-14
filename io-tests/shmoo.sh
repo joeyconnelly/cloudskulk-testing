@@ -1,6 +1,6 @@
 #!/bin/bash
 min=1
-max=100
+max=1000
 base=2
 fileName=dataShmoo_
 tempCopy=temp
@@ -27,9 +27,10 @@ rawFile=$fileName$currTime.raw
 csvFile=$fileName$currTime.csv
 title="Run[#],TestType[test.f],Files[#],TotalSize[MB],TotalOps[#],Throughput[ops/s],Latency[ms/op]"
 quickPrint $title $csvFile
-testID=0
 for myTest in "${testFiles[@]}"
 do
+	testID=0
+
 	#
 	# iterate each filebench test increasing file sizes by given base
 	#
