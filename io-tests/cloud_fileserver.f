@@ -2,12 +2,14 @@
 set $myset=bigfileset
 set $mylog=logfiles
 set $dir=/tmp
-set $filesize=4k
-set $nfiles=50000
+set $filesize=8k
+set $nfiles=10000
 set $meandirwidth=20
 set $nthreads=1
 set $nprocesses=1
 set $iosize=1m
+
+enable lathist
 
 define fileset name=$myset,path=$dir,size=$filesize,entries=$nfiles,dirwidth=$meandirwidth,prealloc=80
 

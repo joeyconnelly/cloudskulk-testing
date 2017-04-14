@@ -1,7 +1,9 @@
 #!/bin/bash
 numRuns=5
+mySize=16
 fileName=data_
 tempCopy=temp
+sizeText='set $filesize='
 inputText="bigfileset populated:"
 outputText="IO Summary:"
 runProg="/usr/local/bin/filebench -f"
@@ -31,6 +33,12 @@ do
 	#
 	for (( i=1; i<=$numRuns; i++ ))
 	do
+                #
+                # ensure file size inside .f file is correct, then execute filebench
+                #
+                newText="$sizeText$mySize"
+                newText+="k"
+                sed --in-place "/$sizeText/c$newText" $myTest
 		$runProg $myTest 1> $tempCopy 2> /dev/null
 
 		#
