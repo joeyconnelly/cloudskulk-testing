@@ -1,7 +1,7 @@
 #!/bin/bash
-min=1
-max=1000
-base=2
+min=1000
+max=10000
+base=250
 fileName=dataShmoo_
 tempCopy=temp
 sizeText='set $filesize='
@@ -34,7 +34,8 @@ do
 	#
 	# iterate each filebench test increasing file sizes by given base
 	#
-	for (( newSize=$min; newSize<=$max; newSize*=$base ))
+	for (( newSize=$min; newSize<=$max; newSize+=$incr ))
+	#for (( newSize=$min; newSize<=$max; newSize*=$base ))
 	do
 		#
 		# change file size inside .f file, then execute filebench
