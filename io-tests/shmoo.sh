@@ -1,6 +1,6 @@
 #!/bin/bash
 min=1
-max=1500
+max=1600
 base=250
 fileName=dataShmoo_
 tempCopy=temp
