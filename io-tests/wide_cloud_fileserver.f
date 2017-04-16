@@ -2,12 +2,12 @@
 set $myset=bigfileset
 set $mylog=logfiles
 set $dir=/tmp
-set $filesize=1001k
-set $nfiles=10000
+set $filesize=1048576k
+set $nfiles=8
 set $meandirwidth=20
 set $nthreads=1
 set $nprocesses=1
-set $iosize=1m
+set $iosize=8k
 
 define fileset name=$myset,path=$dir,size=$filesize,entries=$nfiles,dirwidth=$meandirwidth,prealloc=80
 
