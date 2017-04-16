@@ -1,0 +1,89 @@
+
+[jconnell@yellowstone ~]$ mount
+DESCRIPTION
+	All files accessible in a Unix system are arranged in one big tree, the file hierarchy, rooted at /.
+	These files can be spread out over several devices.
+	The mount command serves to attach the filesystem found on some device to the big file tree.
+
+sysfs 		on /sys type 				sysfs 		(rw,nosuid,nodev,noexec,relatime,seclabel)
+proc 		on /proc type 				proc 		(rw,nosuid,nodev,noexec,relatime)
+devtmpfs 	on /dev type 				devtmpfs 	(rw,nosuid,seclabel,size=8156552k,nr_inodes=2039138,mode=755)
+securityfs 	on /sys/kernel/security type 		securityfs 	(rw,nosuid,nodev,noexec,relatime)
+tmpfs 		on /dev/shm type 			tmpfs 		(rw,nosuid,nodev,seclabel)
+devpts 		on /dev/pts type 			devpts	 	(rw,nosuid,noexec,relatime,seclabel,gid=5,mode=620,ptmxmode=000)
+tmpfs 		on /run type 				tmpfs 		(rw,nosuid,nodev,seclabel,mode=755)
+tmpfs		on /sys/fs/cgroup type 			tmpfs 		(ro,nosuid,nodev,noexec,seclabel,mode=755)
+cgroup 		on /sys/fs/cgroup/systemd type 		cgroup 		(rw,nosuid,nodev,noexec,relatime,xattr,release_agent=/usr/lib/systemd/systemd-cgroups-agent,name=systemd)
+pstore 		on /sys/fs/pstore type 			pstore 		(rw,nosuid,nodev,noexec,relatime,seclabel)
+cgroup 		on /sys/fs/cgroup/memory type 		cgroup 		(rw,nosuid,nodev,noexec,relatime,memory)
+cgroup 		on /sys/fs/cgroup/hugetlb type 		cgroup 		(rw,nosuid,nodev,noexec,relatime,hugetlb)
+cgroup 		on /sys/fs/cgroup/freezer type 		cgroup 		(rw,nosuid,nodev,noexec,relatime,freezer)
+cgroup 		on /sys/fs/cgroup/devices type 		cgroup 		(rw,nosuid,nodev,noexec,relatime,devices)
+cgroup 		on /sys/fs/cgroup/cpu,cpuacct type 	cgroup 		(rw,nosuid,nodev,noexec,relatime,cpu,cpuacct)
+cgroup 		on /sys/fs/cgroup/net_cls,net_prio type cgroup 		(rw,nosuid,nodev,noexec,relatime,net_cls,net_prio)
+cgroup 		on /sys/fs/cgroup/cpuset type 		cgroup 		(rw,nosuid,nodev,noexec,relatime,cpuset)
+cgroup 		on /sys/fs/cgroup/blkio type 		cgroup 		(rw,nosuid,nodev,noexec,relatime,blkio)
+cgroup 		on /sys/fs/cgroup/perf_event type	cgroup 		(rw,nosuid,nodev,noexec,relatime,perf_event)
+configfs 	on /sys/kernel/config type 		configfs 	(rw,relatime)
+/dev/sda2 	on /type 				ext4 		(rw,relatime,seclabel,data=ordered)
+selinuxfs 	on /sys/fs/selinux type 		selinuxfs 	(rw,relatime)
+systemd-1 	on /proc/sys/fs/binfmt_misc type 	autofs 		(rw,relatime,fd=32,pgrp=1,timeout=300,minproto=5,maxproto=5,direct)
+mqueue 		on /dev/mqueue type 			mqueue 		(rw,relatime,seclabel)
+debugfs 	on /sys/kernel/debug type 		debugfs 	(rw,relatime,seclabel)
+hugetlbfs 	on /dev/hugepages type 			hugetlbfs 	(rw,relatime,seclabel)
+nfsd 		on /proc/fs/nfsd type 			nfsd 		(rw,relatime)
+/dev/sda1 	on /boot type 				ext4 		(rw,relatime,seclabel,data=ordered)
+/dev/sda6 	on /tmp type 				ext4 		(rw,relatime,seclabel,data=ordered)
+/dev/sda3 	on /var type 				ext4 		(rw,relatime,seclabel,data=ordered)
+sunrpc 		on /var/lib/nfs/rpc_pipefs type		rpc_pipefs 	(rw,relatime)
+tmpfs 		on /run/user/42 type 			tmpfs 		(rw,nosuid,nodev,relatime,seclabel,size=1637448k,mode=700,uid=42,gid=42)
+tmpfs 		on /run/user/1000 type 			tmpfs 		(rw,nosuid,nodev,relatime,seclabel,size=1637448k,mode=700,uid=1000,gid=1000)
+gvfsd-fuse 	on /run/user/1000/gvfs type 		fuse.gvfsd-fuse (rw,nosuid,nodev,relatime,user_id=1000,group_id=1000)
+fusectl 	on /sys/fs/fuse/connections type 	fusectl 	(rw,relatime)
+tmpfs 		on /run/user/1003 type 			tmpfs 		(rw,nosuid,nodev,relatime,seclabel,size=1637448k,mode=700,uid=1003,gid=1003)
+
+=============================================================================================================================================================================================
+
+[jconnell@yellowstone ~]$ df --print-type
+DESCRIPTION
+	df displays the amount of disk space available on the file system containing each file name argument.
+	If no file name is given, the space available on all currently mounted file systems is shown.
+	Disk space is shown in 1K blocks  by  default.
+
+Filesystem     Type     1K-blocks      Used Available Use% Mounted on
+devtmpfs       devtmpfs   8156552         0   8156552   0% /dev
+tmpfs          tmpfs      8187220       172   8187048   1% /dev/shm
+tmpfs          tmpfs      8187220      1364   8185856   1% /run
+tmpfs          tmpfs      8187220         0   8187220   0% /sys/fs/cgroup
+/dev/sda2      ext4     515930552 306548664 183151104  63% /
+/dev/sda1      ext4       5029504    182328   4568648   4% /boot
+/dev/sda6      ext4     303837528  13770712 274609640   5% /tmp
+/dev/sda3      ext4     103081248   3554940  94267044   4% /var
+tmpfs          tmpfs      1637448        16   1637432   1% /run/user/42
+tmpfs          tmpfs      1637448        24   1637424   1% /run/user/1000
+tmpfs          tmpfs      1637448         4   1637444   1% /run/user/1003
+
+=============================================================================================================================================================================================
+
+[jconnell@yellowstone ~]$ stat --file-system --format=%T /myDirectory
+DESCRIPTION
+	Display file or file system status.
+	-f, --file-system
+		display file system status instead of file status
+	%T     file system type in human readable form
+
+[jconnell@yellowstone ~]$ stat --file-system --format=%T /tmp
+ext2/ext3
+[jconnell@yellowstone ~]$ stat --file-system --format=%T /usr/local/bin/filebench
+ext2/ext3
+[jconnell@yellowstone ~]$ stat --file-system --format=%T /home/jconnell/cloudskulk-testing/io-tests/
+ext2/ext3
+
+=============================================================================================================================================================================================
+
+// RAM size on yellowstone, 16G ->
+[jconnell@yellowstone research]$ cat /proc/meminfo
+MemTotal:       16374444 kB
+MemFree:         5070520 kB
+MemAvailable:   14087604 kB
+
