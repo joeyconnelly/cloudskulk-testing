@@ -2,7 +2,7 @@
 set $myset=bigfileset
 set $mylog=logfiles
 set $dir=/tmp
-set $filesize=512k
+set $filesize=1750k
 set $nfiles=10000
 set $meandirwidth=20
 set $nthreads=1

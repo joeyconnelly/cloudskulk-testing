@@ -1,5 +1,5 @@
 #!/bin/bash
-min=1000
+min=1
 max=10000
 base=250
 fileName=dataShmoo_
@@ -34,7 +34,7 @@ do
 	#
 	# iterate each filebench test increasing file sizes by given base
 	#
-	for (( newSize=$min; newSize<=$max; newSize+=$incr ))
+	for (( newSize=$min; newSize<=$max; newSize+=$base ))
 	#for (( newSize=$min; newSize<=$max; newSize*=$base ))
 	do
 		#
