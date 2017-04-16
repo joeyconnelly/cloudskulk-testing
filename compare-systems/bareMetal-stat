@@ -1,0 +1,25 @@
+[jconnell@yellowstone compare-systems]$ stat --file-system --format=%T /tmp
+ext2/ext3
+[jconnell@yellowstone compare-systems]$ stat --file-system --format=%T /usr/local/bin/filebench
+ext2/ext3
+[jconnell@yellowstone compare-systems]$ stat --file-system --format=%T /home/j
+jconnell/ jxiao/    
+[jconnell@yellowstone compare-systems]$ stat --file-system --format=%T /home/jconnell/cloudskulk-testing/io-tests/
+ext2/ext3
+[jconnell@yellowstone compare-systems]$ ll /dev/sda*
+brw-rw----. 1 root disk 8, 0 Jan 12 20:10 /dev/sda
+brw-rw----. 1 root disk 8, 1 Jan 12 20:10 /dev/sda1
+brw-rw----. 1 root disk 8, 2 Jan 12 20:10 /dev/sda2
+brw-rw----. 1 root disk 8, 3 Jan 12 20:10 /dev/sda3
+brw-rw----. 1 root disk 8, 4 Jan 12 20:10 /dev/sda4
+brw-rw----. 1 root disk 8, 5 Jan 12 20:10 /dev/sda5
+brw-rw----. 1 root disk 8, 6 Jan 12 20:10 /dev/sda6
+[jconnell@yellowstone compare-systems]$ stat --file-system --format=%T /dev/sda*
+tmpfs
+tmpfs
+tmpfs
+tmpfs
+tmpfs
+tmpfs
+tmpfs
+
