@@ -1,20 +1,20 @@
 #!/bin/bash
-numRuns=1
-tag=bareMetal
+numRuns=5
+tag=_bareMetal
 min=1
-#min=200
-max=1500000
+max=128
 base=2
 fileName=data_
 tempCopy=temp
+errorLog=errFile.log
 sizeText='set $filesize='
 inputText="bigfileset populated:"
 outputText="IO Summary:"
 runProg="/usr/local/bin/filebench -f"
 declare -a testFiles=(
-	"my_fileserver.f"
-	"my_varmail.f"
-	"my_webserver.f"
+	"def_fileserver.f"
+	"def_varmail.f"
+	"def_webserver.f"
 )
 quickPrint(){
 	echo -e "$1"
@@ -25,11 +25,13 @@ quickPrint(){
 #
 # run filebench macros
 #
-currTime=$(date +"%m-%d-%Y_%H-%M-%S")
+currTime=$(date +"%m-%d")
 rawFile=$fileName$currTime$tag.raw
 csvFile=$fileName$currTime$tag.csv
 title="Run[#],TestType[test.f],Files[#],TotalSize[MB],TotalOps[#],Throughput[ops/s],Latency[ms/op]"
+quickPrint $currTime $errorLog
 quickPrint $title $csvFile
+###testID=0
 for myTest in "${testFiles[@]}"
 do
 	#
@@ -53,7 +55,7 @@ do
 			#
 			# execute filebench benchmark
 			#
-			$runProg $myTest 1> $tempCopy 2> /dev/null
+			$runProg $myTest 1> $tempCopy 2>> $errorLog
 
 			#
 			# parse output result data for key results
