@@ -1,0 +1,188 @@
+
+qemu -m 12G ...
+
+===========================================================================================
+
+[level1@localhost compare-systems]$ cat /proc/meminfo
+MemTotal:       12303256 kB
+MemFree:        10967144 kB
+MemAvailable:   11222392 kB
+Buffers:           30536 kB
+Cached:           458020 kB
+SwapCached:            0 kB
+Active:           802672 kB
+Inactive:         368676 kB
+Active(anon):     683684 kB
+Inactive(anon):     9444 kB
+Active(file):     118988 kB
+Inactive(file):   359232 kB
+Unevictable:          32 kB
+Mlocked:              32 kB
+SwapTotal:       2162684 kB
+SwapFree:        2162684 kB
+Dirty:                44 kB
+Writeback:             0 kB
+AnonPages:        682812 kB
+Mapped:           231600 kB
+Shmem:             10348 kB
+Slab:              69160 kB
+SReclaimable:      29300 kB
+SUnreclaim:        39860 kB
+KernelStack:        6848 kB
+PageTables:        36428 kB
+NFS_Unstable:          0 kB
+Bounce:                0 kB
+WritebackTmp:          0 kB
+CommitLimit:     8314312 kB
+Committed_AS:    4005568 kB
+VmallocTotal:   34359738367 kB
+VmallocUsed:           0 kB
+VmallocChunk:          0 kB
+HardwareCorrupted:     0 kB
+AnonHugePages:         0 kB
+ShmemHugePages:        0 kB
+ShmemPmdMapped:        0 kB
+CmaTotal:              0 kB
+CmaFree:               0 kB
+HugePages_Total:       0
+HugePages_Free:        0
+HugePages_Rsvd:        0
+HugePages_Surp:        0
+Hugepagesize:       2048 kB
+DirectMap4k:       92032 kB
+DirectMap2M:     5150720 kB
+DirectMap1G:     9437184 kB
+
+===========================================================================================
+
+[level1@localhost compare-systems]$ top
+
+top - 21:30:27 up 2 min,  1 user,  load average: 0.28, 0.29, 0.12
+Tasks: 176 total,   2 running, 174 sleeping,   0 stopped,   0 zombie
+%Cpu(s):  0.7 us,  0.3 sy,  0.0 ni, 99.0 id,  0.0 wa,  0.0 hi,  0.0 si,  0.0 st
+KiB Mem : 12303256 total, 10957448 free,   786392 used,   559416 buff/cache
+KiB Swap:  2162684 total,  2162684 free,        0 used. 11212964 avail Mem 
+
+  PID USER      PR  NI    VIRT    RES    SHR S %CPU %MEM     TIME+ COMMAND                                      
+ 1374 level1    20   0 1945752 245216  87516 S  1.0  2.0   0:09.32 gnome-shell                                  
+    3 root      20   0       0      0      0 S  0.3  0.0   0:00.02 kworker/0:0                                  
+ 1767 level1    20   0  713312  38100  29244 S  0.3  0.3   0:00.56 gnome-terminal-                              
+ 2173 level1    20   0  156644   4080   3464 R  0.3  0.0   0:00.01 top                                          
+    1 root      20   0  214896  10476   7468 S  0.0  0.1   0:00.52 systemd          
+
+
+===========================================================================================
+
+[level1@localhost compare-systems]$ free -h
+              total        used        free      shared  buff/cache   available
+Mem:            11G        747M         10G         10M        544M         10G
+Swap:          2.1G          0B        2.1G
+[level1@localhost compare-systems]$ free
+              total        used        free      shared  buff/cache   available
+Mem:       12303256      767892    10977268       10616      558096    11232908
+Swap:       2162684           0     2162684
+
+===========================================================================================
+
+[level1@localhost compare-systems]$ vmstat -s
+     12303256 K total memory
+       759844 K used memory
+       802852 K active memory
+       351452 K inactive memory
+     10986828 K free memory
+        30776 K buffer memory
+       525808 K swap cache
+      2162684 K total swap
+            0 K used swap
+      2162684 K free swap
+         2780 non-nice user cpu ticks
+            6 nice user cpu ticks
+          552 system cpu ticks
+        20342 idle cpu ticks
+          284 IO-wait cpu ticks
+           60 IRQ cpu ticks
+            5 softirq cpu ticks
+            0 stolen cpu ticks
+       496527 pages paged in
+        21952 pages paged out
+            0 pages swapped in
+            0 pages swapped out
+        64761 interrupts
+       190881 CPU context switches
+   1493177286 boot time
+         2228 forks
+
+===========================================================================================
+
+[level1@localhost compare-systems]$ sudo dmidecode -t 17
+# dmidecode 3.0
+Getting SMBIOS data from sysfs.
+SMBIOS 2.8 present.
+
+Handle 0x1100, DMI type 17, 40 bytes
+Memory Device
+	Array Handle: 0x1000
+	Error Information Handle: Not Provided
+	Total Width: Unknown
+	Data Width: Unknown
+	Size: 12288 MB
+	Form Factor: DIMM
+	Set: None
+	Locator: DIMM 0
+	Bank Locator: Not Specified
+	Type: RAM
+	Type Detail: Other
+	Speed: Unknown
+	Manufacturer: QEMU
+	Serial Number: Not Specified
+	Asset Tag: Not Specified
+	Part Number: Not Specified
+	Rank: Unknown
+	Configured Clock Speed: Unknown
+	Minimum Voltage: Unknown
+	Maximum Voltage: Unknown
+	Configured Voltage: Unknown
+
+===========================================================================================
+
+[level1@localhost compare-systems]$ lscpu
+Architecture:          x86_64
+CPU op-mode(s):        32-bit, 64-bit
+Byte Order:            Little Endian
+CPU(s):                1
+On-line CPU(s) list:   0
+Thread(s) per core:    1
+Core(s) per socket:    1
+Socket(s):             1
+NUMA node(s):          1
+Vendor ID:             GenuineIntel
+CPU family:            6
+Model:                 60
+Model name:            Intel(R) Core(TM) i7-4790 CPU @ 3.60GHz
+Stepping:              3
+CPU MHz:               3591.682
+BogoMIPS:              7183.36
+Virtualization:        VT-x
+Hypervisor vendor:     KVM
+Virtualization type:   full
+L1d cache:             32K
+L1i cache:             32K
+L2 cache:              256K
+L3 cache:              8192K
+NUMA node0 CPU(s):     0
+Flags:                 fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush mmx fxsr sse sse2 ss syscall nx pdpe1gb rdtscp lm constant_tsc arch_perfmon rep_good nopl pni pclmulqdq vmx ssse3 fma cx16 pcid sse4_1 sse4_2 x2apic movbe popcnt tsc_deadline_timer aes xsave avx f16c rdrand hypervisor lahf_lm abm tpr_shadow vnmi flexpriority ept fsgsbase tsc_adjust bmi1 avx2 smep bmi2 erms invpcid xsaveopt
+
+===========================================================================================
+
+[level1@localhost compare-systems]$ swapon -s
+Filename				Type		Size	Used	Priority
+/dev/dm-1                              	partition	2162684	0	-1
+
+===========================================================================================
+
+[level1@localhost compare-systems]$ getconf PAGESIZE
+4096
+
+===========================================================================================
+
+
