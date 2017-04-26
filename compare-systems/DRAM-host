@@ -1,0 +1,163 @@
+
+[jconnell@yellowstone research]$ cat /proc/meminfo
+MemTotal:       16374444 kB
+MemFree:         9131864 kB
+MemAvailable:   14696592 kB
+Buffers:           52632 kB
+Cached:          5195256 kB
+SwapCached:        76652 kB
+Active:          3097864 kB
+Inactive:        3541220 kB
+Active(anon):     354060 kB
+Inactive(anon):  1037248 kB
+Active(file):    2743804 kB
+Inactive(file):  2503972 kB
+Unevictable:           0 kB
+Mlocked:               0 kB
+SwapTotal:      33554428 kB
+SwapFree:       32199332 kB
+Dirty:               168 kB
+Writeback:             0 kB
+AnonPages:       1335144 kB
+Mapped:           127480 kB
+Shmem:               112 kB
+Slab:             441820 kB
+SReclaimable:     377396 kB
+SUnreclaim:        64424 kB
+KernelStack:        9856 kB
+PageTables:        44416 kB
+NFS_Unstable:          0 kB
+Bounce:                0 kB
+WritebackTmp:          0 kB
+CommitLimit:    41741648 kB
+Committed_AS:    4966240 kB
+VmallocTotal:   34359738367 kB
+VmallocUsed:      122408 kB
+VmallocChunk:   34359537660 kB
+HardwareCorrupted:     0 kB
+AnonHugePages:         0 kB
+HugePages_Total:       0
+HugePages_Free:        0
+HugePages_Rsvd:        0
+HugePages_Surp:        0
+Hugepagesize:       2048 kB
+DirectMap4k:      311728 kB
+DirectMap2M:    14309376 kB
+DirectMap1G:     3145728 kB
+
+=========================================================================================
+
+[jconnell@yellowstone research]$ top
+top - 20:57:57 up 102 days, 23:47,  3 users,  load average: 0.26, 1.38, 3.25
+Tasks: 269 total,   1 running, 266 sleeping,   2 stopped,   0 zombie
+%Cpu(s):  1.6 us,  0.8 sy,  0.0 ni, 96.9 id,  0.0 wa,  0.0 hi,  0.8 si,  0.0 st
+KiB Mem : 16374444 total,  9139236 free,  1545464 used,  5689744 buff/cache
+KiB Swap: 33554428 total, 32199332 free,  1355096 used. 14703956 avail Mem 
+
+  PID USER      PR  NI    VIRT    RES    SHR S  %CPU %MEM     TIME+ COMMAND                                          
+  367 root       0 -20       0      0      0 S   0.0  0.0   0:01.06 kworker/2:1H                                     
+  376 root       0 -20       0      0      0 S   0.0  0.0   0:01.31 kworker/1:1H                                     
+  384 root      20   0       0      0      0 S   0.0  0.0   0:10.90 jbd2/sda2-8                    
+...
+
+=========================================================================================
+
+[jconnell@yellowstone ~]$ free -h
+              total        used        free      shared  buff/cache   available
+Mem:            15G        1.5G        8.7G        112K        5.4G         14G
+Swap:           31G        1.3G         30G
+[jconnell@yellowstone ~]$ free
+              total        used        free      shared  buff/cache   available
+Mem:       16374444     1518420     9166132         112     5689892    14731216
+Swap:      33554428     1355096    32199332
+
+=========================================================================================
+
+[jconnell@yellowstone ~]$ vmstat -s
+     16374444 K total memory
+      1546548 K used memory
+      3093640 K active memory
+      3540212 K inactive memory
+      9137952 K free memory
+        52844 K buffer memory
+      5637100 K swap cache
+     33554428 K total swap
+      1355096 K used swap
+     32199332 K free swap
+      9422151 non-nice user cpu ticks
+        78483 nice user cpu ticks
+      5988702 system cpu ticks
+   7091827247 idle cpu ticks
+     10398399 IO-wait cpu ticks
+            0 IRQ cpu ticks
+        19801 softirq cpu ticks
+            0 stolen cpu ticks
+    178795389 pages paged in
+   3502309248 pages paged out
+      9352452 pages swapped in
+     12632822 pages swapped out
+    541064571 interrupts
+   1636190787 CPU context switches
+   1484277023 boot time
+       341013 forks
+
+=========================================================================================
+
+[jconnell@yellowstone ~]$ sudo dmidecode -t 17
+[sudo] password for jconnell: 
+# dmidecode 2.12
+SMBIOS 2.7 present.
+
+...
+
+Handle 0x0040, DMI type 17, 34 bytes
+Memory Device
+        Array Handle: 0x003E
+        Error Information Handle: Not Provided
+        Total Width: 64 bits
+        Data Width: 64 bits
+        Size: 8192 MB
+        Form Factor: DIMM
+        Set: None
+        Locator: DIMM1
+        Bank Locator: Not Specified
+        Type: DDR3
+        Type Detail: Synchronous
+        Speed: 1600 MHz
+        Manufacturer: Samsung
+        Serial Number: 0880550E5041
+        Asset Tag: 02154900
+        Part Number: M378B1G73EB0-YK0  
+        Rank: 2
+        Configured Clock Speed: 1600 MHz
+...
+
+=========================================================================================
+
+[jconnell@yellowstone ~]$ lscpu
+Architecture:          x86_64
+CPU op-mode(s):        32-bit, 64-bit
+Byte Order:            Little Endian
+CPU(s):                8
+On-line CPU(s) list:   0-7
+Thread(s) per core:    2
+Core(s) per socket:    4
+Socket(s):             1
+NUMA node(s):          1
+Vendor ID:             GenuineIntel
+CPU family:            6
+Model:                 60
+Model name:            Intel(R) Core(TM) i7-4790 CPU @ 3.60GHz
+Stepping:              3
+CPU MHz:               3520.968
+CPU max MHz:           4000.0000
+CPU min MHz:           800.0000
+BogoMIPS:              7183.49
+Virtualization:        VT-x
+L1d cache:             32K
+L1i cache:             32K
+L2 cache:              256K
+L3 cache:              8192K
+NUMA node0 CPU(s):     0-7
+
+

@@ -1,7 +1,11 @@
 #!/bin/bash
 
-file=timeGuest-writethrough-12G-1CPU.txt
+file=timeGuest.txt
 prog=page-faults
+#prog=/home/jconnell/research/level1-testFilebench
 
-/usr/bin/time -v ./$prog 1> $file
+rm -f $subfile $file
+echo -e "start monitoring page faults..."
+/usr/bin/time -v $prog 2> $file 
+echo -e "stop monitoring page faults..."
 
