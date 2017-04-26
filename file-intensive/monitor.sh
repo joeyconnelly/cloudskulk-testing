@@ -1,6 +1,6 @@
 #!/bin/bash
 
-file=timeGuest.txt
+file=guest-runningTestLocally.txt
 prog=./page-faults
 #prog=/home/jconnell/research/level1-testFilebench
 
