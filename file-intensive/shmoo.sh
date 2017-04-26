@@ -1,6 +1,6 @@
 #!/bin/bash
 numRuns=1
-tag=_level1-writethrough-12G
+tag=_level1-none-12G
 min=1
 max=128
 base=2
