@@ -1,0 +1,66 @@
+Filebench Version 1.5-alpha3
+0.000: Allocated 173MB of shared memory
+0.059: File-server Version 3.0 personality successfully loaded
+0.059: Populating and pre-allocating filesets
+0.074: bigfileset populated: 50000 files, avg. dir. width = 20, avg. dir. depth = 3.6, 0 leafdirs, 6250.000MB total size
+0.074: Removing bigfileset tree (if exists)
+0.076: Pre-allocating directories in bigfileset tree
+0.098: Pre-allocating files in bigfileset tree
+1.696: Waiting for pre-allocation to finish (in case of a parallel pre-allocation)
+1.696: Population and pre-allocation of filesets completed
+1.696: Starting 1 filereader instances
+2.699: Running...
+62.704: Run took 60 seconds...
+62.705: Per-Operation Breakdown
+statfile1            1860935ops    31013ops/s   0.0mb/s      0.0ms/op [0.00ms - 22.79ms]
+deletefile1          1860939ops    31013ops/s   0.0mb/s      0.0ms/op [0.01ms - 79.85ms]
+closefile3           1860948ops    31013ops/s   0.0mb/s      0.0ms/op [0.00ms - 23.17ms]
+readfile1            1860950ops    31013ops/s 4355.4mb/s      0.1ms/op [0.02ms - 59.67ms]
+appendfilerand1      1860953ops    31013ops/s 242.2mb/s      0.0ms/op [0.00ms - 80.32ms]
+openfile2            1860960ops    31014ops/s   0.0mb/s      0.1ms/op [0.00ms - 39.41ms]
+closefile1           1860970ops    31014ops/s   0.0mb/s      0.0ms/op [0.00ms - 28.21ms]
+wrtfile1             1860971ops    31014ops/s 3876.7mb/s      0.1ms/op [0.02ms - 56.30ms]
+createfile1          1860977ops    31014ops/s   0.0mb/s      0.1ms/op [0.01ms - 37.05ms]
+62.705: IO Summary: 16748603 ops 279121.044 ops/s 31013/62027 rd/wr 8474.3mb/s   0.2ms/op
+62.705: Shutting down processes
+Filebench Version 1.5-alpha3
+0.000: Allocated 173MB of shared memory
+0.001: Varmail Version 3.0 personality successfully loaded
+0.001: Populating and pre-allocating filesets
+0.016: bigfileset populated: 50000 files, avg. dir. width = 1000000, avg. dir. depth = 0.8, 0 leafdirs, 6250.000MB total size
+0.016: Removing bigfileset tree (if exists)
+0.607: Pre-allocating directories in bigfileset tree
+0.607: Pre-allocating files in bigfileset tree
+1.707: Waiting for pre-allocation to finish (in case of a parallel pre-allocation)
+1.707: Population and pre-allocation of filesets completed
+1.707: Starting 1 filereader instances
+2.709: Running...
+62.719: Run took 60 seconds...
+62.720: Per-Operation Breakdown
+closefile4           4252834ops    70869ops/s   0.0mb/s      0.0ms/op [0.00ms -  0.74ms]
+readfile4            4252834ops    70869ops/s 1178.5mb/s      0.0ms/op [0.00ms -  8.76ms]
+openfile4            4252837ops    70869ops/s   0.0mb/s      0.0ms/op [0.00ms - 11.50ms]
+closefile3           4252839ops    70869ops/s   0.0mb/s      0.0ms/op [0.00ms -  6.48ms]
+fsyncfile3           4252839ops    70869ops/s   0.0mb/s      0.0ms/op [0.00ms -  0.64ms]
+appendfilerand3      4252839ops    70869ops/s 553.8mb/s      0.0ms/op [0.00ms -  6.68ms]
+readfile3            4252839ops    70869ops/s 1179.6mb/s      0.0ms/op [0.00ms - 19.94ms]
+openfile3            4252842ops    70869ops/s   0.0mb/s      0.0ms/op [0.00ms -  9.67ms]
+closefile2           4252842ops    70869ops/s   0.0mb/s      0.0ms/op [0.00ms - 12.65ms]
+fsyncfile2           4252842ops    70869ops/s   0.0mb/s      0.0ms/op [0.00ms -  1.61ms]
+appendfilerand2      4252842ops    70869ops/s 553.5mb/s      0.0ms/op [0.00ms -  5.37ms]
+createfile2          4252847ops    70869ops/s   0.0mb/s      0.0ms/op [0.01ms - 15.51ms]
+deletefile1          4252850ops    70869ops/s   0.0mb/s      0.1ms/op [0.00ms - 15.88ms]
+62.720: IO Summary: 55286926 ops 921293.437 ops/s 141737/141737 rd/wr 3465.4mb/s   0.0ms/op
+62.720: Shutting down processes
+Filebench Version 1.5-alpha3
+0.000: Allocated 173MB of shared memory
+0.001: Web-server Version 3.1 personality successfully loaded
+0.001: Populating and pre-allocating filesets
+0.001: logfiles populated: 1 files, avg. dir. width = 20, avg. dir. depth = 0.0, 0 leafdirs, 0.125MB total size
+0.001: Removing logfiles tree (if exists)
+0.004: Pre-allocating directories in logfiles tree
+0.005: Pre-allocating files in logfiles tree
+0.023: bigfileset populated: 50000 files, avg. dir. width = 20, avg. dir. depth = 3.6, 0 leafdirs, 6250.000MB total size
+0.023: Removing bigfileset tree (if exists)
+0.202: Pre-allocating directories in bigfileset tree
+0.224: Pre-allocating files in bigfileset tree

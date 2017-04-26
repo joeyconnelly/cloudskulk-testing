@@ -1,5 +1,5 @@
 #!/bin/bash
-file=guest30G-quick.data
+file=guest60G-quick.data
 echo -e "starting script... \n"
 /usr/local/bin/filebench -f def_fileserver.f 1> $file
 /usr/local/bin/filebench -f def_varmail.f 1>> $file
