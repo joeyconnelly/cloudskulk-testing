@@ -1,0 +1,28 @@
+WARNING: Image format was not specified for '/home/jconnell/guest-imgs/diskWTC.img' and probing guessed raw.
+         Automatically detecting the format is dangerous for raw images, write operations on block 0 will be restricted.
+         Specify the 'raw' format explicitly to remove the restrictions.
+
+** (qemu-system-x86_64:23378): WARNING **: Couldn't connect to accessibility bus: Failed to connect to socket /tmp/dbus-JUDDJwjgI6: Connection refused
+	Command being timed: "/home/jconnell/research/level1-testFilebench"
+	User time (seconds): 79.21
+	System time (seconds): 4.39
+	Percent of CPU this job got: 64%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 2:08.71
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 8012788
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 1418590
+	Voluntary context switches: 72776
+	Involuntary context switches: 317
+	Swaps: 0
+	File system inputs: 24
+	File system outputs: 40072
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0

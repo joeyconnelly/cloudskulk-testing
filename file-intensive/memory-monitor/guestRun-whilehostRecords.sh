@@ -1,0 +1,5 @@
+#!/bin/bash
+
+/usr/local/bin/filebench -f def_fileserver.f &
+
+
