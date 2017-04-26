@@ -1,10 +1,10 @@
 #!/bin/bash
-numRuns=5
-tag=_level1-writethrough-
+numRuns=1
+tag=_level1-writethrough-12G
 min=1
 max=128
 base=2
-fileName=data_
+fileName=shmooData_
 tempCopy=temp
 errorLog=errFile.log
 sizeText='set $filesize='
@@ -31,21 +31,21 @@ csvFile=$fileName$currTime$tag.csv
 title="Run[#],TestType[test.f],Files[#],TotalSize[MB],TotalOps[#],Throughput[ops/s],Latency[ms/op]"
 quickPrint $currTime $errorLog
 quickPrint $title $csvFile
-testID=0
+#testID=0
 for myTest in "${testFiles[@]}"
 do
 	#
 	# iterate each filebench test increasing file sizes by given base
 	#
-#	testID=0
-#	for (( newSize=$min; newSize<=$max; newSize*=$base ))
-#	do
+	testID=0
+	for (( newSize=$min; newSize<=$max; newSize*=$base ))
+	do
 		#
 		# change file size inside .f file
 		#	
-#		newText="$sizeText$newSize"
-#		newText+="k"
-#		sed --in-place "/$sizeText/c$newText" $myTest
+		newText="$sizeText$newSize"
+		newText+="k"
+		sed --in-place "/$sizeText/c$newText" $myTest
 
 		#
 		# loop filebench w/identical parameters to collect average
@@ -75,6 +75,6 @@ do
 
 		done
 		let testID++
-#	done
+	done
 done
 rm -f $tempCopy
