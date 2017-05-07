@@ -17,11 +17,9 @@ define process name=filereader,instances=$nprocesses
   {
     flowop deletefile name=deletefile1,filesetname=$myset
     flowop createfile name=createfile2,filesetname=$myset,fd=1
-    flowop fsync name=fsyncfile2,fd=1
     flowop closefile name=closefile2,fd=1
     flowop openfile name=openfile3,filesetname=$myset,fd=1
     flowop readwholefile name=readfile3,fd=1,iosize=$iosize
-    flowop fsync name=fsyncfile3,fd=1
     flowop closefile name=closefile3,fd=1
     flowop openfile name=openfile4,filesetname=$myset,fd=1
     flowop readwholefile name=readfile4,fd=1,iosize=$iosize

@@ -15,6 +15,7 @@ runProg="/usr/local/bin/filebench -f"
 declare -a testFiles=(
 	"literature_fileserver.f"
 	"literature_varmail.f"
+	"my_varmail.f"
 	"literature_webserver.f"
 )
 quickPrint(){
