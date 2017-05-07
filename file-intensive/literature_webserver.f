@@ -2,13 +2,12 @@
 set $myset=bigfileset
 set $mylog=logfiles
 set $dir=/tmp
-set $filesize=128k
+set $filesize=16k
 set $nfiles=50000
 set $meandirwidth=20
 set $nthreads=100
 set $nprocesses=1
-set $iosize=1m
-set $meanappendsize=16k
+set $iosize=512k
 
 define fileset name=$myset,path=$dir,size=$filesize,entries=$nfiles,dirwidth=$meandirwidth,prealloc=100,readonly
 define fileset name=$mylog,path=$dir,size=$filesize,entries=1,dirwidth=$meandirwidth,prealloc
@@ -47,7 +46,6 @@ define process name=filereader,instances=$nprocesses
     flowop openfile name=openfile10,filesetname=$myset,fd=1
     flowop readwholefile name=readfile10,fd=1,iosize=$iosize
     flowop closefile name=closefile10,fd=1
-    flowop appendfilerand name=appendlog,filesetname=$mylog,iosize=$meanappendsize,fd=2
   }
 }
 

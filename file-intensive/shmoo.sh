@@ -1,10 +1,11 @@
 #!/bin/bash
 numRuns=1
-tag=_level1-none-12G
+tag=_14G-60Graw
 min=1
 max=128
+# nfiles=50000, filesize_max=128k, totalSize=>6.4G
 base=2
-fileName=shmooData_
+fileName=shmoo_
 tempCopy=temp
 errorLog=errFile.log
 sizeText='set $filesize='
@@ -12,9 +13,9 @@ inputText="bigfileset populated:"
 outputText="IO Summary:"
 runProg="/usr/local/bin/filebench -f"
 declare -a testFiles=(
-	"def_fileserver.f"
-	"def_varmail.f"
-	"def_webserver.f"
+	"literature_fileserver.f"
+	"literature_varmail.f"
+	"literature_webserver.f"
 )
 quickPrint(){
 	echo -e "$1"
