@@ -1,6 +1,6 @@
 #!/bin/bash
 numRuns=1
-tag=_14G-60Graw
+tag=_bareMetal
 min=1
 max=128
 # nfiles=50000, filesize_max=128k, totalSize=>6.4G
@@ -15,7 +15,7 @@ runProg="/usr/local/bin/filebench -f"
 declare -a testFiles=(
 	"literature_fileserver.f"
 	"literature_varmail.f"
-	"my_varmail.f"
+	"noappend_varmail.f"
 	"literature_webserver.f"
 )
 quickPrint(){
