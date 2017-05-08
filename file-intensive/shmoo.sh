@@ -1,6 +1,6 @@
 #!/bin/bash
 numRuns=1
-tag=_14G-60graw
+tag=_14G-60gqcow-ide
 min=1
 max=128
 # nfiles=50000, filesize_max=128k, totalSize=>6.4G
