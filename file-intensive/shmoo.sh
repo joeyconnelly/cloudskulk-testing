@@ -5,7 +5,7 @@ min=1
 max=128
 # nfiles=50000, filesize_max=128k, totalSize=>6.4G
 base=2
-fileName=shmoo_
+fileName=shmooAdjust_
 tempCopy=temp
 errorLog=errFile.log
 sizeText='set $filesize='
@@ -13,10 +13,12 @@ inputText="bigfileset populated:"
 outputText="IO Summary:"
 runProg="/usr/local/bin/filebench -f"
 declare -a testFiles=(
-	"literature_fileserver.f"
-	"literature_varmail.f"
-	"noappend_varmail.f"
-	"literature_webserver.f"
+	"adjustNOAPPEND_fileserver.f"
+	"adjustAPPEND_16_fileserver. f"
+	"adjustAPPEND_64_fileserver.f"
+	"adjustNOAPPEND_webserver.f"
+	"adjustAPPEND_16_webserver.f"
+	"adjustAPPEND_64_webserver.f"
 )
 quickPrint(){
 	echo -e "$1"
