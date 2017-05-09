@@ -20,9 +20,10 @@ declare -a testFiles=(
 	"adjustAPPEND_16_webserver.f"
 	"adjustAPPEND_64_webserver.f"
 )
-declare -a benchDirs=(
+declare -a benchFiles=(
 	"/tmp/bigfileset"
 	"/tmp/logfiles"
+	"/tmp/filebench-shm*"
 )
 quickPrint(){
 	echo -e "$1"
@@ -64,6 +65,7 @@ do
 			# execute filebench benchmark
 			#
 			sudo rm -rf ${benchDirs[0]} ${benchDirs[1]}
+			sudo rm -f ${benchDirs[2]}
 			$runProg $myTest 1> $tempCopy 2>> $errorLog
 
 			#
