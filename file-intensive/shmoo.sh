@@ -1,6 +1,6 @@
 #!/bin/bash
 numRuns=1
-tag=_14G-60graw-writethrough
+tag=_bareMetal-scheduler-deadline
 min=1
 max=128
 # nfiles=50000, filesize_max=128k, totalSize=>6.4G
@@ -64,8 +64,8 @@ do
 			#
 			# execute filebench benchmark
 			#
-			sudo rm -rf ${benchDirs[0]} ${benchDirs[1]}
-			sudo rm -f ${benchDirs[2]}
+			rm -rf ${benchDirs[0]} ${benchDirs[1]}
+			rm -f ${benchDirs[2]}
 			$runProg $myTest 1> $tempCopy 2>> $errorLog
 
 			#
