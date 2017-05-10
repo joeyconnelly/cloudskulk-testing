@@ -1,0 +1,76 @@
+05-09
+WARNING: Could not open /proc/sys/kernel/shmmax file!
+It means that you probably ran Filebench not as a root. Filebench will not increase shared
+region limits in this case, which can lead to the failures on certain workloads.
+WARNING: Could not open /proc/sys/kernel/shmmax file!
+It means that you probably ran Filebench not as a root. Filebench will not increase shared
+region limits in this case, which can lead to the failures on certain workloads.
+WARNING: Could not open /proc/sys/kernel/shmmax file!
+It means that you probably ran Filebench not as a root. Filebench will not increase shared
+region limits in this case, which can lead to the failures on certain workloads.
+WARNING: Could not open /proc/sys/kernel/shmmax file!
+It means that you probably ran Filebench not as a root. Filebench will not increase shared
+region limits in this case, which can lead to the failures on certain workloads.
+WARNING: Could not open /proc/sys/kernel/shmmax file!
+It means that you probably ran Filebench not as a root. Filebench will not increase shared
+region limits in this case, which can lead to the failures on certain workloads.
+22.023: Failed to write 3881 bytes on fd 17: No space left on device
+22.031: Failed to write 16384 bytes on fd 53: Success
+22.031: filereaderthread-24: flowop wrtfile1-1 failed
+22.023: Failed to write 15431 bytes on fd 49: Success
+22.031: filereaderthread-34: flowop appendfilerand1-1 failed
+22.023: Failed to write 16384 bytes on fd 9: Success
+22.031: filereaderthread-49: flowop wrtfile1-1 failed
+22.031: filereaderthread-27: flowop appendfilerand1-1 failed
+22.024: Failed to write 16384 bytes on fd 46: Success
+22.031: filereaderthread-2: flowop wrtfile1-1 failed
+22.054: Failed to write 16384 bytes on fd 39: Success
+22.054: filereaderthread-16: flowop wrtfile1-1 failed
+22.100: Failed to write 16384 bytes on fd 12: Success
+22.100: filereaderthread-50: flowop wrtfile1-1 failed
+22.123: Failed to write 16384 bytes on fd 50: Success
+22.123: filereaderthread-12: flowop wrtfile1-1 failed
+22.600: Failed to write 16384 bytes on fd 32: Success
+22.601: filereaderthread-8: flowop wrtfile1-1 failed
+22.683: Failed to write 16384 bytes on fd 45: Success
+22.683: filereaderthread-14: flowop wrtfile1-1 failed
+22.739: Failed to write 8725 bytes on fd 11: Success
+22.739: filereaderthread-7: flowop appendfilerand1-1 failed
+22.739: Failed to write 12449 bytes on fd 27: Success
+22.739: filereaderthread-1: flowop appendfilerand1-1 failed
+22.754: Failed to write 16384 bytes on fd 48: Success
+22.754: filereaderthread-41: flowop wrtfile1-1 failed
+22.755: Failed to write 16384 bytes on fd 47: Success
+22.755: filereaderthread-35: flowop wrtfile1-1 failed
+22.859: Failed to write 16384 bytes on fd 13: Success
+22.859: filereaderthread-26: flowop wrtfile1-1 failed
+22.859: Failed to write 16384 bytes on fd 24: Success
+22.859: filereaderthread-11: flowop wrtfile1-1 failed
+22.871: Failed to write 7768 bytes on fd 33: Success
+22.871: filereaderthread-18: flowop appendfilerand1-1 failed
+23.023: NO VALID RESULTS! Filebench run terminated prematurely around line 33
+23.023: Failed to write 16384 bytes on fd 30: Success
+23.023: filereaderthread-32: flowop wrtfile1-1 failed
+23.067: Failed to write 13736 bytes on fd 10: Success
+23.067: filereaderthread-37: flowop appendfilerand1-1 failed
+23.432: Failed to write 16384 bytes on fd 28: Success
+23.432: filereaderthread-9: flowop wrtfile1-1 failed
+23.459: Failed to write 16384 bytes on fd 16: Success
+23.459: filereaderthread-47: flowop wrtfile1-1 failed
+23.772: Failed to write 16384 bytes on fd 31: Success
+23.772: filereaderthread-10: flowop wrtfile1-1 failed
+23.772: Failed to write 16384 bytes on fd 34: Success
+23.772: filereaderthread-15: flowop wrtfile1-1 failed
+WARNING: Could not open /proc/sys/kernel/shmmax file!
+It means that you probably ran Filebench not as a root. Filebench will not increase shared
+region limits in this case, which can lead to the failures on certain workloads.
+0.735: Failed to pre-allocate file /tmp/bigfileset/00000001/00000008/00000002/00000005/00000008/00000010/00000006/00000009/00000071/00000009: No such file or directory around line 33
+0.752: Failed to create filesets around line 33
+WARNING: Could not open /proc/sys/kernel/shmmax file!
+It means that you probably ran Filebench not as a root. Filebench will not increase shared
+region limits in this case, which can lead to the failures on certain workloads.
+Could not write to the shared memory file: No space left on device
+WARNING: Could not open /proc/sys/kernel/shmmax file!
+It means that you probably ran Filebench not as a root. Filebench will not increase shared
+region limits in this case, which can lead to the failures on certain workloads.
+Could not write to the shared memory file: No space left on device

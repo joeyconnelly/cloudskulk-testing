@@ -1,6 +1,6 @@
 #!/bin/bash
 numRuns=1
-tag=_14G-60gqcow-directsync
+tag=_2Gshmem-60gqcow
 min=1
 max=128
 # nfiles=50000, filesize_max=128k, totalSize=>6.4G
@@ -13,12 +13,12 @@ inputText="bigfileset populated:"
 outputText="IO Summary:"
 runProg="/usr/local/bin/filebench -f"
 declare -a testFiles=(
-	"adjustNOAPPEND_fileserver.f"
+#	"adjustNOAPPEND_fileserver.f"
 	"adjustAPPEND_16_fileserver.f"
-	"adjustAPPEND_64_fileserver.f"
-	"adjustNOAPPEND_webserver.f"
-	"adjustAPPEND_16_webserver.f"
-	"adjustAPPEND_64_webserver.f"
+#	"adjustAPPEND_64_fileserver.f"
+#	"adjustNOAPPEND_webserver.f"
+#	"adjustAPPEND_16_webserver.f"
+#	"adjustAPPEND_64_webserver.f"
 )
 declare -a benchFiles=(
 	"/tmp/bigfileset"
