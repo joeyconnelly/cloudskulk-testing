@@ -1,5 +1,5 @@
 #!/bin/bash
-tag=unsafe
+tag=ROOT
 echo -e "starting script... \n"
 file=dataQuick-$tag.data
 /usr/local/bin/filebench -f working3-1G.f 1> $file

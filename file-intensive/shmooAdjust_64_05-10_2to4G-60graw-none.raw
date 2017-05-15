@@ -1,0 +1,74 @@
+Filebench Version 1.5-alpha3
+0.000: Allocated 173MB of shared memory
+0.121: File-server Version 3.0 personality successfully loaded
+0.121: Populating and pre-allocating filesets
+0.137: bigfileset populated: 50000 files, avg. dir. width = 20, avg. dir. depth = 3.6, 0 leafdirs, 48.828MB total size
+0.137: Removing bigfileset tree (if exists)
+0.138: Pre-allocating directories in bigfileset tree
+0.159: Pre-allocating files in bigfileset tree
+0.594: Waiting for pre-allocation to finish (in case of a parallel pre-allocation)
+0.594: Population and pre-allocation of filesets completed
+0.599: Starting 1 filereader instances
+1.604: Running...
+8.873: Run took 7 seconds...
+8.924: Shutting down processes
+Filebench Version 1.5-alpha3
+0.000: Allocated 173MB of shared memory
+0.056: File-server Version 3.0 personality successfully loaded
+0.056: Populating and pre-allocating filesets
+0.169: bigfileset populated: 50000 files, avg. dir. width = 20, avg. dir. depth = 3.6, 0 leafdirs, 97.656MB total size
+0.169: Removing bigfileset tree (if exists)
+0.427: Pre-allocating directories in bigfileset tree
+0.449: Pre-allocating files in bigfileset tree
+0.867: Waiting for pre-allocation to finish (in case of a parallel pre-allocation)
+0.867: Population and pre-allocation of filesets completed
+0.873: Starting 1 filereader instances
+1.888: Running...
+3.888: Run took 2 seconds...
+3.896: Shutting down processes
+Filebench Version 1.5-alpha3
+0.000: Allocated 173MB of shared memory
+0.320: File-server Version 3.0 personality successfully loaded
+0.320: Populating and pre-allocating filesets
+0.368: bigfileset populated: 50000 files, avg. dir. width = 20, avg. dir. depth = 3.6, 0 leafdirs, 195.312MB total size
+0.368: Removing bigfileset tree (if exists)
+0.629: Pre-allocating directories in bigfileset tree
+0.650: Pre-allocating files in bigfileset tree
+1.104: Waiting for pre-allocation to finish (in case of a parallel pre-allocation)
+1.104: Population and pre-allocation of filesets completed
+1.109: Starting 1 filereader instances
+2.219: Running...
+4.221: Run took 2 seconds...
+4.231: Shutting down processes
+Filebench Version 1.5-alpha3
+0.000: Allocated 173MB of shared memory
+0.302: File-server Version 3.0 personality successfully loaded
+0.302: Populating and pre-allocating filesets
+0.319: bigfileset populated: 50000 files, avg. dir. width = 20, avg. dir. depth = 3.6, 0 leafdirs, 390.625MB total size
+0.319: Removing bigfileset tree (if exists)
+0.580: Pre-allocating directories in bigfileset tree
+0.611: Pre-allocating files in bigfileset tree
+1.088: Waiting for pre-allocation to finish (in case of a parallel pre-allocation)
+1.088: Population and pre-allocation of filesets completed
+1.093: Starting 1 filereader instances
+2.202: Running...
+3.202: Run took 1 seconds...
+3.202: Shutting down processes
+Filebench Version 1.5-alpha3
+0.000: Allocated 173MB of shared memory
+0.084: File-server Version 3.0 personality successfully loaded
+0.084: Populating and pre-allocating filesets
+0.102: bigfileset populated: 50000 files, avg. dir. width = 20, avg. dir. depth = 3.6, 0 leafdirs, 781.250MB total size
+0.102: Removing bigfileset tree (if exists)
+0.291: Pre-allocating directories in bigfileset tree
+0.314: Pre-allocating files in bigfileset tree
+0.805: Aborting...
+Filebench Version 1.5-alpha3
+0.000: Allocated 173MB of shared memory
+0.000: File-server Version 3.0 personality successfully loaded
+0.000: Populating and pre-allocating filesets
+0.016: bigfileset populated: 50000 files, avg. dir. width = 20, avg. dir. depth = 3.6, 0 leafdirs, 1562.500MB total size
+0.016: Removing bigfileset tree (if exists)
+0.168: Pre-allocating directories in bigfileset tree
+0.190: Pre-allocating files in bigfileset tree
+0.387: Aborting...
