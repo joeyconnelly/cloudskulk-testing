@@ -1,6 +1,10 @@
 #!/bin/bash
 numRuns=1
+<<<<<<< HEAD
 tag=_60graw_virtio_writethrough_blockstats-web
+=======
+tag=_2Gshmem-60gqcow
+>>>>>>> a04f964ac6162836686a3e0dd5b9e3270ba76a9c
 min=1
 max=128
 # nfiles=50000, filesize_max=128k, totalSize=>6.4G
@@ -69,7 +73,12 @@ do
 			#
 			# execute filebench benchmark
 			#
+<<<<<<< HEAD
 			removeFiles
+=======
+			rm -rf ${benchDirs[0]} ${benchDirs[1]}
+			rm -f ${benchDirs[2]}
+>>>>>>> a04f964ac6162836686a3e0dd5b9e3270ba76a9c
 			$runProg $myTest 1> $tempCopy 2>> $errorLog
 			removeFiles
 			df -h
