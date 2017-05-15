@@ -1,15 +1,11 @@
 #!/bin/bash
 numRuns=1
-<<<<<<< HEAD
-tag=_60graw_virtio_writethrough_blockstats-web
-=======
-tag=_2Gshmem-60gqcow
->>>>>>> a04f964ac6162836686a3e0dd5b9e3270ba76a9c
+tag=_60graw_virtio_writethrough_threads_rootDir
 min=1
 max=128
 # nfiles=50000, filesize_max=128k, totalSize=>6.4G
 base=2
-fileName=shmooAdjusted
+fileName=newShmoo_
 tempCopy=temp
 errorLog=errFile.log
 sizeText='set $filesize='
@@ -17,16 +13,17 @@ inputText="bigfileset populated:"
 outputText="IO Summary:"
 runProg="/usr/local/bin/filebench -f"
 declare -a testFiles=(
-#	"adjustNOAPPEND_fileserver.f"
+	"adjustNOAPPEND_fileserver.f"
 	"adjustAPPEND_16_fileserver.f"
-#	"adjustAPPEND_64_fileserver.f"
-#	"adjustNOAPPEND_webserver.f"
-#	"adjustAPPEND_16_webserver.f"
-#	"adjustAPPEND_64_webserver.f"
+	"adjustAPPEND_64_fileserver.f"
+	"adjustNOAPPEND_webserver.f"
+	"adjustAPPEND_16_webserver.f"
+	"adjustAPPEND_64_webserver.f"
 )
 declare -a benchFiles=(
-	"/tmp/bigfileset"
-	"/tmp/logfiles"
+	"/home/level1/testing/bigfileset"
+	"/home/level1/testing/logfiles"
+	"/home/level1/testing/filebench-shm*"
 	"/tmp/filebench-shm*"
 )
 quickPrint(){
@@ -35,7 +32,7 @@ quickPrint(){
 }
 removeFiles(){
 	sudo rm -rf ${benchDirs[0]} ${benchDirs[1]}
-	sudo rm -f ${benchDirs[2]}
+	sudo rm -f ${benchDirs[2]} ${benchDirs[3]}
 }
 
 #
@@ -73,12 +70,7 @@ do
 			#
 			# execute filebench benchmark
 			#
-<<<<<<< HEAD
 			removeFiles
-=======
-			rm -rf ${benchDirs[0]} ${benchDirs[1]}
-			rm -f ${benchDirs[2]}
->>>>>>> a04f964ac6162836686a3e0dd5b9e3270ba76a9c
 			$runProg $myTest 1> $tempCopy 2>> $errorLog
 			removeFiles
 			df -h

@@ -1,7 +1,7 @@
 
 set $myset=bigfileset
 set $mylog=logfiles
-set $dir=/tmp
+set $dir=/
 set $filesize=128k
 set $nfiles=50000
 set $meandirwidth=20
