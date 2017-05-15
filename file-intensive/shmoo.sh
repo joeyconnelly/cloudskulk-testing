@@ -1,6 +1,8 @@
 #!/bin/bash
 numRuns=1
-tag=_2to4g_60gqcow_virtio_writeback_threads_homeDir
+tag=_host_cfq_homeDir
+insideVM=0
+#tag=_2to4g_60gqcow_virtio_writeback_threads_homeDir
 min=1
 max=128
 # nfiles=50000, filesize_max=128k, totalSize=>6.4G
@@ -21,9 +23,10 @@ declare -a testFiles=(
 	"adjustAPPEND_16_varmail.f"
 	"adjustNOAPPEND_varmail.f"
 )
+dir=testing
 declare -a benchFiles=(
-	"$HOME/testing/bigfileset"
-	"$HOME/testing/logfiles"
+	"$HOME/$dir/bigfileset"
+	"$HOME/$dir/logfiles"
 	"/tmp/filebench-shm*"
 )
 quickPrint(){
@@ -31,39 +34,47 @@ quickPrint(){
 	echo -e "$1" >> $2
 }
 removeFiles(){
-	sudo rm -rf ${benchFiles[0]} ${benchFiles[1]}
-	sudo rm -f ${benchFiles[2]}
+	rm -rf ${benchFiles[0]} ${benchFiles[1]}
+	if [ $insideVM -eq 1 ];then
+		rm -f ${benchFiles[2]}
+	fi
 }
 
 #
-# run filebench macros
+# create filebench directories and initial output data files
 #
-currTime=$(date +"%m-%d")
-rawFile=$fileName$currTime$tag.raw
-csvFile=$fileName$currTime$tag.csv
+rm -rf $HOME/$dir
+mkdir $HOME/$dir
+tagTime=$(date +"%m-%d")
+rawFile=$fileName$tagTime$tag.raw
+csvFile=$fileName$tagTime$tag.csv
+startTime=$(date +"%m-%d-%Y_%H-%M-%S")
 title="Run[#],TestType[test.f],Files[#],TotalSize[MB],TotalOps[#],Throughput[ops/s],Latency[ms/op]"
-quickPrint $currTime $errorLog
+rm -f $errorLog
+echo -e "$startTime" > $errorLog
+quickPrint $startTime $csvFile
 quickPrint $title $csvFile
-#testID=0
+removeFiles
 for myTest in "${testFiles[@]}"
 do
 	#
+	# change home directory inside .f file
+	#
+	newText="$pathText$HOME/$dir"
+	sed --in-place "/$pathText/c$newText" $myTest
+	testID=0
+
+	#
 	# iterate each filebench test increasing file sizes by given base
 	#
-	testID=0
-	removeFiles
 	for (( newSize=$min; newSize<=$max; newSize*=$base ))
 	do
 		#
-		# change file size + home directory inside .f file
+		# change file size inside .f file
 		#	
-		removeFiles
 		newText="$sizeText$newSize"
 		newText+="k"
 		sed --in-place "/$sizeText/c$newText" $myTest
-		newText="$pathText$HOME"
-		newText+="/testing"
-		sed --in-place "/$pathText/c$newText" $myTest
 
 		#
 		# loop filebench w/identical parameters to collect average
@@ -74,7 +85,11 @@ do
 			# execute filebench benchmark
 			#
 			removeFiles
+			currTime=$(date +"%H-%M-%S")
+			echo -e "time before test: $currTime"
 			$runProg $myTest 1> $tempCopy 2>> $errorLog
+			currTime=$(date +"%H-%M-%S")
+			echo -e "time after test: $currTime"
 			removeFiles
 			df -h
 
@@ -99,4 +114,11 @@ do
 		let testID++
 	done
 done
+
+#
+# clean unneeded files and save total script execution time
+#
 rm -f $tempCopy
+endTime=$(date +"%m-%d-%Y_%H-%M-%S")
+quickPrint $endTime $csvFile
+
