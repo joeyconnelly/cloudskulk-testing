@@ -2,7 +2,7 @@
 set $myset=bigfileset
 set $mylog=logfiles
 set $dir=/home/level1-60g-qcow/testing
-set $filesize=1k
+set $filesize=128k
 set $nfiles=50000
 set $meandirwidth=1000000
 set $nthreads=16
