@@ -1,8 +1,8 @@
 #!/bin/bash
-insideVM=0
+insideVM=1
 numRuns=1
-tag=_host_cfq_homeDir
-#tag=_2to4g_60gqcow_virtio_writeback_threads_homeDir
+#tag=_host_cfq_homeDir
+tag=_level1_cfq_qcow2_60G_virtio-net_2to4G_threads_writeback
 fileName=data_
 tempCopy=temp
 errorLog=errFile.log
