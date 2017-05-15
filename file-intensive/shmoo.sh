@@ -1,6 +1,6 @@
 #!/bin/bash
 numRuns=1
-tag=_60graw_virtio_writethrough_threads_rootDir
+tag=_2gvdram_60gqcow_virtio_writethrough_threads_homeDir
 min=1
 max=128
 # nfiles=50000, filesize_max=128k, totalSize=>6.4G
@@ -9,6 +9,7 @@ fileName=newShmoo_
 tempCopy=temp
 errorLog=errFile.log
 sizeText='set $filesize='
+pathText='set $dir='
 inputText="bigfileset populated:"
 outputText="IO Summary:"
 runProg="/usr/local/bin/filebench -f"
@@ -21,9 +22,8 @@ declare -a testFiles=(
 	"adjustAPPEND_64_webserver.f"
 )
 declare -a benchFiles=(
-	"/home/level1/testing/bigfileset"
-	"/home/level1/testing/logfiles"
-	"/home/level1/testing/filebench-shm*"
+	"$HOME/testing/bigfileset"
+	"$HOME/testing/logfiles"
 	"/tmp/filebench-shm*"
 )
 quickPrint(){
@@ -31,8 +31,8 @@ quickPrint(){
 	echo -e "$1" >> $2
 }
 removeFiles(){
-	sudo rm -rf ${benchDirs[0]} ${benchDirs[1]}
-	sudo rm -f ${benchDirs[2]} ${benchDirs[3]}
+	sudo rm -rf ${benchFiles[0]} ${benchFiles[1]}
+	sudo rm -f ${benchFiles[2]}
 }
 
 #
@@ -55,12 +55,15 @@ do
 	for (( newSize=$min; newSize<=$max; newSize*=$base ))
 	do
 		#
-		# change file size inside .f file
+		# change file size + home directory inside .f file
 		#	
 		removeFiles
 		newText="$sizeText$newSize"
 		newText+="k"
 		sed --in-place "/$sizeText/c$newText" $myTest
+		newText="$pathText$HOME"
+		newText+="testing"
+		sed --in-place "/$pathText/c$newText" $myTest
 
 		#
 		# loop filebench w/identical parameters to collect average

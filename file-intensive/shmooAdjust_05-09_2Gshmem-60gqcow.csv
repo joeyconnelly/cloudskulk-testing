@@ -1,9 +1,0 @@
-Run[#],TestType[test.f],Files[#],TotalSize[MB],TotalOps[#],Throughput[ops/s],Latency[ms/op]
-0,adjustAPPEND_16_fileserver.f,50000,48.828MB,14659619,244279.988,0.5
-1,adjustAPPEND_16_fileserver.f,50000,97.656MB,17618719,293612.799,0.4
-2,adjustAPPEND_16_fileserver.f,50000,195.312MB,17203737,286708.923,0.4
-3,adjustAPPEND_16_fileserver.f,50000,390.625MB,13669005,227776.460,0.6
-4,adjustAPPEND_16_fileserver.f,50000,781.250MB,,,
-5,adjustAPPEND_16_fileserver.f,50000,1562.500MB,,,
-6,adjustAPPEND_16_fileserver.f,,,,,
-7,adjustAPPEND_16_fileserver.f,,,,,
