@@ -1,0 +1,6 @@
+05-15-2017_16-56-29
+Run[#],TestType[test.f],Files[#],TotalSize[MB],TotalOps[#],Throughput[ops/s],Latency[ms/op]
+0,my_fileserver.f,50000,3125.000MB,1477154,24617.393,6.0
+0,my_webserver.f,50000,781.250MB,42537079,708821.898,0.2
+0,my_varmail.f,50000,1562.500MB,57640,960.540,54.0
+05-15-2017_16-59-44
