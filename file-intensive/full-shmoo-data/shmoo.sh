@@ -1,13 +1,12 @@
 #!/bin/bash
-numRuns=1
-tag=_host_cfq_homeDir
-insideVM=0
-#tag=_2to4g_60gqcow_virtio_writeback_threads_homeDir
+numRuns=5
+insideVM=1
+tag=_level1_noop_raw_60G_virtio-net_512to1024M_threads_writeback
+#tag=_host_cfq_homeDir
 min=1
 max=128
-# nfiles=50000, filesize_max=128k, totalSize=>6.4G
 base=2
-fileName=newShmoo_
+fileName=bestCase_
 tempCopy=temp
 errorLog=errFile.log
 sizeText='set $filesize='
@@ -17,11 +16,8 @@ outputText="IO Summary:"
 runProg="/usr/local/bin/filebench -f"
 declare -a testFiles=(
 	"adjustAPPEND_16_fileserver.f"
-	"adjustNOAPPEND_fileserver.f"
 	"adjustAPPEND_16_webserver.f"
-	"adjustNOAPPEND_webserver.f"
 	"adjustAPPEND_16_varmail.f"
-	"adjustNOAPPEND_varmail.f"
 )
 dir=testing
 declare -a benchFiles=(
