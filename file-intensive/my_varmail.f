@@ -1,7 +1,7 @@
 
 set $myset=bigfileset
 set $mylog=logfiles
-set $dir=/home/level1-60graw/testing
+set $dir=/home/level1-30g/testing
 set $filesize=32k
 set $nfiles=50000
 set $meandirwidth=1000000
