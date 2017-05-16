@@ -2,7 +2,7 @@
 insideVM=1
 numRuns=1
 #tag=_host_cfq_homeDir
-tag=_level1_cfq_raw_60G_virtio-net_2to4G_native_none
+tag=_level1_cfq_raw_60G_virtio-net_2to4G_threads_none
 fileName=data_
 tempCopy=temp
 errorLog=errFile.log
