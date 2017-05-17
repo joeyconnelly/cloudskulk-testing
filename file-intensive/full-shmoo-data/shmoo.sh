@@ -1,8 +1,8 @@
 #!/bin/bash
 numRuns=5
-insideVM=1
-tag=_level1_noop_raw_60G_virtio-net_512to1024M_threads_writeback
-#tag=_host_cfq_homeDir
+insideVM=0
+#tag=_level1_noop_raw_60G_virtio-net_512to1024M_threads_writeback
+tag=_host_noop_homeDir
 min=1
 max=128
 base=2
