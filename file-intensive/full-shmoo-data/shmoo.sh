@@ -2,7 +2,7 @@
 numRuns=5
 insideVM=0
 #tag=_level1_noop_raw_60G_virtio-net_512to1024M_threads_writeback
-tag=_host_noop_homeDir
+tag=_host_deadline_homeDir
 min=1
 max=128
 base=2
@@ -32,7 +32,7 @@ quickPrint(){
 removeFiles(){
 	rm -rf ${benchFiles[0]} ${benchFiles[1]}
 	if [ $insideVM -eq 1 ];then
-		rm -f ${benchFiles[2]}
+		rm -rf ${benchFiles[2]}
 	fi
 }
 
