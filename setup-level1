@@ -2,9 +2,10 @@
 export NO_AT_BRIDGE=1
 
 qemu-system-x86_64 \
--name level1 \
+-name level2 \
 -m size=512M,slots=1,maxmem=1024M \
--boot order=c \
+-boot order=d \
+-cdrom <blah> \
 -drive file=/tmp/guest-imgs/diskRAW-120G.img,media=disk,format=raw,cache=writeback,aio=threads,if=virtio \
 -machine type=pc-i440fx-2.3 \
 -cpu host,+vmx \
@@ -13,6 +14,6 @@ qemu-system-x86_64 \
 -enable-kvm \
 -vga qxl \
 -show-cursor \
--device virtio-net-pci,netdev=netLevel1 \
--netdev user,id=netLevel1 &
+-device virtio-net-pci,netdev=netLevel2 \
+-netdev user,id=netLevel2 &
 

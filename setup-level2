@@ -6,7 +6,7 @@ qemu-system-x86_64 \
 -m size=512M,slots=1,maxmem=1024M \
 -boot order=d \
 -cdrom <blah> \
--drive file=/tmp/guest-imgs/diskRaw-60G.img,media=disk,format=raw,cache=writeback,aio=threads,if=virtio \
+-drive file=/tmp/guest-imgs/diskRAW-60G.img,media=disk,format=raw,cache=writeback,aio=threads,if=virtio \
 -machine type=pc-i440fx-2.3 \
 -cpu host,+vmx \
 -smp cpus=8,cores=4,threads=2,sockets=1,maxcpus=8 \
@@ -17,5 +17,3 @@ qemu-system-x86_64 \
 -device virtio-net-pci,netdev=netLevel2 \
 -netdev user,id=netLevel2 &
 
--drive file=/tmp/guest-imgs/diskQCOW-60G.img,media=disk,format=qcow2,cache=writeback,aio=threads,if=virtio \
--drive file=/tmp/guest-imgs/diskRaw-60G.img,media=disk,format=raw,cache=writeback,aio=threads,if=virtio \
