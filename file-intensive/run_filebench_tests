@@ -1,0 +1,18 @@
+
+export NO_AT_BRIDGE=1
+
+qemu-system-x86_64 \
+-name mig-L1-Nest \
+-m size=512M,slots=1,maxmem=1024M \
+-boot order=c \
+-drive file=/tmp/guest-imgs/diskRaw-60G.img,media=disk,format=raw,cache=writeback,aio=threads,if=virtio \
+-machine type=pc-i440fx-2.3 \
+-cpu host,+vmx \
+-smp cpus=8,cores=4,threads=2,sockets=1,maxcpus=8 \
+-numa node,cpus=0-7 \
+-enable-kvm \
+-vga qxl \
+-show-cursor \
+-device virtio-net-pci,netdev=netL1Nest \
+-netdev user,id=netL1Nest,hostfwd=tcp:0:4446-:5556 &
+
