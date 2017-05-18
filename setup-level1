@@ -5,7 +5,7 @@ qemu-system-x86_64 \
 -name level2 \
 -m size=512M,slots=1,maxmem=1024M \
 -boot order=d \
--cdrom <blah> \
+-cdrom /home/jconnell/iso-files/Fedora-Workstation-Live-x86_64-25-1.3.iso \
 -drive file=/tmp/guest-imgs/diskRAW-120G.img,media=disk,format=raw,cache=writeback,aio=threads,if=virtio \
 -machine type=pc-i440fx-2.3 \
 -cpu host,+vmx \
