@@ -5,7 +5,22 @@ qemu-system-x86_64 \
 -name level2 \
 -m size=6G \
 -boot order=d \
--cdrom /home/level1-guest/Fedora-Workstation-Live-x86_64-25-1.3.iso
+-cdrom /home/level1-guest/Fedora-Workstation-Live-x86_64-25-1.3.iso \
+-drive file=/home/level1-guest/diskRAW-60G.img,media=disk,format=raw,cache=writeback,aio=threads,if=virtio \
+-machine type=pc-i440fx-2.3 \
+-cpu host,+vmx \
+-smp cpus=8,cores=4,threads=2,sockets=1,maxcpus=8 \
+-numa node,cpus=0-7 \
+-enable-kvm \
+-vga qxl \
+-show-cursor \
+-device virtio-net-pci,netdev=netLevel2 \
+-netdev user,id=netLevel2 &
+
+qemu-system-x86_64 \
+-name level2 \
+-m size=6G \
+-boot order=c \
 -drive file=/home/level1-guest/diskRAW-60G.img,media=disk,format=raw,cache=writeback,aio=threads,if=virtio \
 -machine type=pc-i440fx-2.3 \
 -cpu host,+vmx \

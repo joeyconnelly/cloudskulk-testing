@@ -3,7 +3,7 @@ export NO_AT_BRIDGE=1
 
 qemu-system-x86_64 \
 -name level1 \
--m size=512M,slots=1,maxmem=1024M \
+-m size=14G \
 -boot order=c \
 -drive file=/tmp/guest-imgs/diskRAW-120G.img,media=disk,format=raw,cache=writeback,aio=threads,if=virtio \
 -machine type=pc-i440fx-2.3 \
