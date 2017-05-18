@@ -1,16 +1,25 @@
 #!/bin/bash
-insideVM=1
+insideVM=false
 numRuns=5
-#tag=_host_
+tag=_host_
 #tag=_level1_
-tag=_level2_
-fileName=final_
+#tag=_level2_
+fileName=LAST_
 tempCopy=temp
 errorLog=errFile.log
 pathText='set $dir='
+sizeText='set $filesize='
 inputText="bigfileset populated:"
 outputText="IO Summary:"
 runProg="/usr/local/bin/filebench -f"
+declare -a ranges=(
+	"64k"
+	"128k"	
+	"8k"
+	"128k"	
+	"2k"
+	"64k"	
+)
 declare -a testFiles=(
 	"final_fileserver.f"
 	"final_webserver.f"
@@ -28,7 +37,7 @@ quickPrint(){
 }
 removeFiles(){
 	rm -rf ${benchFiles[0]} ${benchFiles[1]}
-	if [ $insideVM -eq 1 ];then
+	if [ "$insideVM" = true ];then
 		rm -f ${benchFiles[2]}
 	fi
 }
@@ -48,47 +57,67 @@ echo -e "$startTime" > $errorLog
 quickPrint $startTime $csvFile
 quickPrint $title $csvFile
 removeFiles
+
+#
+# loop on each filebench macro
+#
+currRange=0
 for myTest in "${testFiles[@]}"
 do
 	#
 	# change home directory inside .f file
 	#
-	newText="$pathText$HOME/$dir"
-	sed --in-place "/$pathText/c$newText" $myTest
+	newPathText="$pathText$HOME/$dir"
+	sed --in-place "/$pathText/c$newPathText" $myTest
 
 	#
-	# loop filebench w/identical parameters to collect average
+	# vary the min/max range of file sizes for current macro
 	#
-	for (( testID=0; testID<$numRuns; testID++ ))
+	for (( minMax=0; minMax<2; minMax++ ))
 	do
+	
 		#
-		# execute filebench benchmark
+		# change file size inside .f file
 		#
-		removeFiles
-		currTime=$(date +"%H-%M-%S")
-		echo -e "time before test: $currTime"
-		$runProg $myTest 1> $tempCopy 2>> $errorLog
-		currTime=$(date +"%H-%M-%S")
-		echo -e "time after test: $currTime"
-		removeFiles
-		df -h
+		newSizeText="$sizeText$newSize${ranges[$currRange]}"
+		sed --in-place "/$sizeText/c$newSizeText" $myTest
+		let currRange=$currRange+1
 
 		#
-		# parse output result data for key results
+		# loop single macro, same parameters to collect average
 		#
-		numFiles=$(sed "/$inputText/!d" $tempCopy | awk -F ' ' '{print $4}')
-		totalSize=$(sed "/$inputText/!d" $tempCopy | awk -F ' ' '{print $18}')
-		totalOps=$(sed "/$outputText/!d" $tempCopy | awk -F ' ' '{print $4}')
-		throughPut=$(sed "/$outputText/!d" $tempCopy | awk -F ' ' '{print $6}')
-		latency=$(sed "/$outputText/!d" $tempCopy | awk -F ' ' '{print $11}' | awk -F "ms/op" '{print $1}')
+		for (( testID=0; testID<$numRuns; testID++ ))
+		do
+		
+			#
+			# execute filebench benchmark
+			#
+			removeFiles
+			currTime=$(date +"%H-%M-%S")
+			echo -e "time before test: $currTime"
+#			$runProg $myTest 1> $tempCopy 2>> $errorLog
+			currTime=$(date +"%H-%M-%S")
+			echo -e "time after test: $currTime"
+			removeFiles
+			df -h
 
-		#
-		# output results to .raw + .csv + console
-		#
-		line="$testID,$myTest,$numFiles,$totalSize,$totalOps,$throughPut,$latency"
-		quickPrint $line $csvFile
-		removeFiles
-		cat $tempCopy >> $rawFile
+			#
+			# parse output result data for key results
+			#
+			numFiles=$(sed "/$inputText/!d" $tempCopy | awk -F ' ' '{print $4}')
+			totalSize=$(sed "/$inputText/!d" $tempCopy | awk -F ' ' '{print $18}')
+			totalOps=$(sed "/$outputText/!d" $tempCopy | awk -F ' ' '{print $4}')
+			throughPut=$(sed "/$outputText/!d" $tempCopy | awk -F ' ' '{print $6}')
+			latency=$(sed "/$outputText/!d" $tempCopy | awk -F ' ' '{print $11}' | awk -F "ms/op" '{print $1}')
+
+			#
+			# output results to .raw + .csv + console
+			#
+			line="$testID,$myTest,$numFiles,$totalSize,$totalOps,$throughPut,$latency"
+			quickPrint $line $csvFile
+			removeFiles
+			cat $tempCopy >> $rawFile
+		done
 	done
 done
 
