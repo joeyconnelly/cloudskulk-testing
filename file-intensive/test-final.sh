@@ -1,9 +1,9 @@
 #!/bin/bash
-insideVM=false
+insideVM=true
 numRuns=5
-tag=_host_
-#tag=_level1_
-#tag=_level2_
+#tag=_host
+tag=_level1
+#tag=_level2
 fileName=LAST_
 tempCopy=temp
 errorLog=errFile.log
@@ -95,7 +95,7 @@ do
 			removeFiles
 			currTime=$(date +"%H-%M-%S")
 			echo -e "time before test: $currTime"
-#			$runProg $myTest 1> $tempCopy 2>> $errorLog
+			$runProg $myTest 1> $tempCopy 2>> $errorLog
 			currTime=$(date +"%H-%M-%S")
 			echo -e "time after test: $currTime"
 			removeFiles
