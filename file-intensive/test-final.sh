@@ -12,9 +12,9 @@ inputText="bigfileset populated:"
 outputText="IO Summary:"
 runProg="/usr/local/bin/filebench -f"
 declare -a testFiles=(
-	"my_fileserver.f"
-	"my_webserver.f"
-	"my_varmail.f"
+	"final_fileserver.f"
+	"final_webserver.f"
+	"final_varmail.f"
 )
 dir=testing
 declare -a benchFiles=(
