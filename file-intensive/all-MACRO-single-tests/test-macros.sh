@@ -1,9 +1,9 @@
 #!/bin/bash
 insideVM=1
-numRuns=1
+numRuns=5
 #tag=_host_cfq_homeDir
-tag=_level1_deadline_raw_60G_virtio-net_512to1024M_threads_writeback
-fileName=data_
+tag=_level1_noop_raw_60G_virtio-net_512to1024M_threads_writeback
+fileName=bestCase_
 tempCopy=temp
 errorLog=errFile.log
 pathText='set $dir='
