@@ -4,7 +4,8 @@ export NO_AT_BRIDGE=1
 qemu-system-x86_64 \
 -name level2 \
 -m size=512M,slots=1,maxmem=1024M \
--boot order=c \
+-boot order=d \
+-cdrom <blah> \
 -drive file=/tmp/guest-imgs/diskRaw-60G.img,media=disk,format=raw,cache=writeback,aio=threads,if=virtio \
 -machine type=pc-i440fx-2.3 \
 -cpu host,+vmx \
