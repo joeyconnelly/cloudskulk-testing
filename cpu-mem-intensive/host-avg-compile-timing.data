@@ -1,0 +1,13 @@
+host-avg
+Run[0],Start_Time(seconds),1495229664.593752586
+Run[0],End_Time(seconds),1495229682.078770549
+Run[0],Elapsed_Time(seconds),17.4850180149
+Run[1],Start_Time(seconds),1495229689.293967742
+Run[1],End_Time(seconds),1495229704.431874766
+Run[1],Elapsed_Time(seconds),15.1379070282
+Run[2],Start_Time(seconds),1495229711.169283865
+Run[2],End_Time(seconds),1495229726.960156719
+Run[2],Elapsed_Time(seconds),15.7908728123
+Run[3],Start_Time(seconds),1495229733.618821748
+Run[3],End_Time(seconds),1495229748.634641697
+Run[3],Elapsed_Time(seconds),15.015819788

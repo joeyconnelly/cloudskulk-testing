@@ -2,8 +2,8 @@
 
 numRuns=4
 #tag=host-avg
-#tag=level1-avg
-tag=level2-avg
+tag=level1-avg
+#tag=level2-avg
 link="https://cdn.kernel.org/pub/linux/kernel/v4.x/linux-4.11.1.tar.xz"
 file="$tag-compile-timing.data"
 version="linux-4.11.1"
