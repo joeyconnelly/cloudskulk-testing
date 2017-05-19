@@ -1,6 +1,7 @@
 #!/bin/bash
 
-tag=host
+#tag=host
+tag=level1
 link="https://cdn.kernel.org/pub/linux/kernel/v4.x/linux-4.11.1.tar.xz"
 file="$tag-compile-timing.data"
 version="linux-4.11.1"
@@ -9,7 +10,7 @@ download=".tar.xz"
 
 repoDir=$(pwd)
 cd $HOME
-echo -e $tag > $file
+echo -e $tag > $repoDir/$file
 wget $link
 tar -xvf $version$download
 cd $version
@@ -25,11 +26,9 @@ endTime=$(date +%s.%N)
 
 elapsedTime=$(python -c "print(${endTime} - ${startTime})")
 echo -e "Start_Time(seconds),$startTime"
-echo -e "Start_Time(seconds),$startTime" >> $file
+echo -e "Start_Time(seconds),$startTime" >> $repoDir/$file
 echo -e "End_Time(seconds),$endTime"
-echo -e "End_Time(seconds),$endTime" >> $file
+echo -e "End_Time(seconds),$endTime" >> $repoDir/$file
 echo -e "Elapsed_Time(seconds),$elapsedTime"
-echo -e "Elapsed_Time(seconds),$elapsedTime" >> $file
-cd $HOME
-mv $file $repoDir
+echo -e "Elapsed_Time(seconds),$elapsedTime" >> $repoDir/$file
 
