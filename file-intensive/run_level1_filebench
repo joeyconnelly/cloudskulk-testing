@@ -6,7 +6,6 @@ qemu-system-x86_64 \
 -m size=14G \
 -boot order=c \
 -drive file=/tmp/guest-imgs/diskRAW-120G.img,media=disk,format=raw,cache=writeback,aio=threads,if=virtio \
--machine type=pc-i440fx-2.3 \
 -cpu host,+vmx \
 -smp cpus=8,cores=4,threads=2,sockets=1,maxcpus=8 \
 -numa node,cpus=0-7 \

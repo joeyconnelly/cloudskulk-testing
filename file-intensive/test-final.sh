@@ -1,9 +1,9 @@
 #!/bin/bash
 insideVM=true
-numRuns=5
+numRuns=1
 #tag=_host
-tag=_level1
-#tag=_level2
+#tag=_level1
+tag=_level2
 fileName=LAST_
 tempCopy=temp
 errorLog=errFile.log
@@ -13,17 +13,21 @@ inputText="bigfileset populated:"
 outputText="IO Summary:"
 runProg="/usr/local/bin/filebench -f"
 declare -a ranges=(
-	"64k"
-	"128k"	
-	"8k"
-	"128k"	
-	"2k"
-	"64k"	
+"2k"
+"4k"
+"8k"
+"16k"
+"32k"
+"64k"
+"128k"
+#	"64k"
+#	"16k"
+#	"2k"
 )
 declare -a testFiles=(
-	"final_fileserver.f"
+#	"final_fileserver.f"
 	"final_webserver.f"
-	"final_varmail.f"
+#	"final_varmail.f"
 )
 dir=testing
 declare -a benchFiles=(
@@ -73,7 +77,8 @@ do
 	#
 	# vary the min/max range of file sizes for current macro
 	#
-	for (( minMax=0; minMax<2; minMax++ ))
+	#for (( minMax=0; minMax<2; minMax++ ))
+	for (( minMax=0; minMax<${#ranges[@]}; minMax++ ))
 	do
 	
 		#
