@@ -1,7 +1,8 @@
 #!/bin/bash
 
 #tag=host
-tag=level1
+#tag=level1
+tag=level2
 link="https://cdn.kernel.org/pub/linux/kernel/v4.x/linux-4.11.1.tar.xz"
 file="$tag-compile-timing.data"
 version="linux-4.11.1"
