@@ -1,0 +1,13 @@
+level1-avg
+Run[0],Start_Time(seconds),1495230067.629468408
+Run[0],End_Time(seconds),1495230259.669372049
+Run[0],Elapsed_Time(seconds),192.039903641
+Run[1],Start_Time(seconds),1495230268.844816777
+Run[1],End_Time(seconds),1495230461.350799399
+Run[1],Elapsed_Time(seconds),192.505982637
+Run[2],Start_Time(seconds),1495230469.543329122
+Run[2],End_Time(seconds),1495230655.823546198
+Run[2],Elapsed_Time(seconds),186.280216932
+Run[3],Start_Time(seconds),1495230664.721876407
+Run[3],End_Time(seconds),1495230855.979566358
+Run[3],Elapsed_Time(seconds),191.257689953
