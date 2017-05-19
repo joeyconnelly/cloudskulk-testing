@@ -1,10 +1,10 @@
 #!/bin/bash
 insideVM=1
-numRuns=5
+numRuns=1
 #tag=_host_
-#tag=_level1_
-tag=_level2_
-fileName=final_
+tag=_level1_
+#tag=_level2_
+fileName=looking_
 tempCopy=temp
 errorLog=errFile.log
 pathText='set $dir='
@@ -12,9 +12,16 @@ inputText="bigfileset populated:"
 outputText="IO Summary:"
 runProg="/usr/local/bin/filebench -f"
 declare -a testFiles=(
-	"my_fileserver.f"
-	"my_webserver.f"
-	"my_varmail.f"
+	"web_2.f"
+	"web_4.f"
+	"web_8.f"
+	"web_16.f"
+	"web_32.f"
+	"web_64.f"
+	"web_128.f"
+#	"my_fileserver.f"
+#	"my_webserver.f"
+#	"my_varmail.f"
 )
 dir=testing
 declare -a benchFiles=(
