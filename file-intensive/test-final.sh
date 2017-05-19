@@ -70,7 +70,7 @@ do
 	#
 	# vary the min/max range of file sizes for current macro
 	#
-	for (( minMax=0; minMax<2; minMax++ ))
+	for (( minMax=0; minMax<1; minMax++ ))
 	#for (( minMax=0; minMax<${#ranges[@]}; minMax++ ))
 	do
 	
