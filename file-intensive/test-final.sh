@@ -2,8 +2,8 @@
 insideVM=true
 numRuns=10
 #tag=_host
-tag=_level1
-#tag=_level2
+#tag=_level1
+tag=_level2_run1
 fileName=LAST_
 tempCopy=temp
 errorLog=errFile.log
@@ -14,13 +14,13 @@ outputText="IO Summary:"
 runProg="/usr/local/bin/filebench -f"
 declare -a ranges=(
 	"64k"
-	"16k"
-	"2k"
+#	"16k"
+#	"2k"
 )
 declare -a testFiles=(
 	"final_fileserver.f"
-	"final_webserver.f"
-	"final_varmail.f"
+#	"final_webserver.f"
+#	"final_varmail.f"
 )
 dir=testing
 declare -a benchFiles=(

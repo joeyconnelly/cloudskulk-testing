@@ -1,0 +1,10 @@
+05-18-2017_22-03-30
+Run[#],TestType[test.f],Files[#],TotalSize[MB],TotalOps[#],Throughput[ops/s],Latency[ms/op]
+0,final_fileserver.f,50000,3125.000MB,201004,2104.573,27.0
+1,final_fileserver.f,50000,3125.000MB,133657,1721.049,49.2
+2,final_fileserver.f,50000,3125.000MB,131540,2001.782,52.8
+3,final_fileserver.f,50000,3125.000MB,147566,2087.472,58.4
+4,final_fileserver.f,50000,3125.000MB,156943,2156.113,47.6
+5,final_fileserver.f,50000,3125.000MB,934,9.545,5941.0
+6,final_fileserver.f,50000,3125.000MB,75436,1080.890,73.3
+7,final_fileserver.f,50000,3125.000MB,75009,696.386,89.8

@@ -1,0 +1,13 @@
+05-19-2017_12-44-20
+Run[#],TestType[test.f],Files[#],TotalSize[MB],TotalOps[#],Throughput[ops/s],Latency[ms/op]
+0,final_webserver.f,50000,781.250MB,674129,10879.852,6.6
+1,final_webserver.f,50000,781.250MB,311567,5025.686,19.9
+2,final_webserver.f,50000,781.250MB,1469285,20022.752,8.2
+3,final_webserver.f,50000,781.250MB,1850261,19975.688,9.3
+4,final_webserver.f,50000,781.250MB,92492,1517.671,41.9
+5,final_webserver.f,50000,781.250MB,790882,11551.129,13.6
+6,final_webserver.f,50000,781.250MB,572218,9435.315,14.2
+7,final_webserver.f,50000,781.250MB,529657,8521.077,13.8
+8,final_webserver.f,50000,781.250MB,769251,12806.992,10.4
+9,final_webserver.f,50000,781.250MB,1554121,19732.652,8.3
+05-19-2017_12-56-59
