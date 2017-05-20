@@ -1,5 +1,3 @@
-Run[0]: bareMetal-to-bareMetal
-Workload: idle
 capabilities: xbzrle: off rdma-pin-all: off auto-converge: off zero-blocks: off 
 Migration status: completed
 total time: 18643 milliseconds
@@ -14,8 +12,6 @@ skipped: 0 pages
 normal: 158342 pages
 normal bytes: 633368 kbytes
 dirty sync count: 3
-Run[1]: bareMetal-to-bareMetal
-Workload: idle
 capabilities: xbzrle: off rdma-pin-all: off auto-converge: off zero-blocks: off 
 Migration status: completed
 total time: 21772 milliseconds
@@ -30,8 +26,6 @@ skipped: 0 pages
 normal: 183732 pages
 normal bytes: 734928 kbytes
 dirty sync count: 3
-Run[2]: bareMetal-to-bareMetal
-Workload: idle
 capabilities: xbzrle: off rdma-pin-all: off auto-converge: off zero-blocks: off 
 Migration status: completed
 total time: 23285 milliseconds
@@ -46,8 +40,6 @@ skipped: 0 pages
 normal: 193958 pages
 normal bytes: 775832 kbytes
 dirty sync count: 3
-Run[3]: bareMetal-to-bareMetal
-Workload: idle
 capabilities: xbzrle: off rdma-pin-all: off auto-converge: off zero-blocks: off 
 Migration status: completed
 total time: 26171 milliseconds
@@ -62,8 +54,6 @@ skipped: 0 pages
 normal: 217676 pages
 normal bytes: 870704 kbytes
 dirty sync count: 5
-Run[4]: bareMetal-to-bareMetal
-Workload: idle
 capabilities: xbzrle: off rdma-pin-all: off auto-converge: off zero-blocks: off 
 Migration status: completed
 total time: 24555 milliseconds
@@ -78,46 +68,3 @@ skipped: 0 pages
 normal: 205041 pages
 normal bytes: 820164 kbytes
 dirty sync count: 5
-
-
-
-Run[0]: bareMetal-to-bareMetal
-Workload: kernel-compile
-
-Run[1]: bareMetal-to-bareMetal
-Workload: kernel-compile
-
-Run[2]: bareMetal-to-bareMetal
-Workload: kernel-compile
-
-Run[3]: bareMetal-to-bareMetal
-Workload: kernel-compile
-
-Run[4]: bareMetal-to-bareMetal
-Workload: kernel-compile
-
-
-
-
-
-
-
-
-
-
-
-Run[0]: bareMetal-to-bareMetal
-Workload: Filebench
-
-Run[1]: bareMetal-to-bareMetal
-Workload: Filebench
-
-Run[2]: bareMetal-to-bareMetal
-Workload: Filebench
-
-Run[3]: bareMetal-to-bareMetal
-Workload: Filebench
-
-Run[4]: bareMetal-to-bareMetal
-Workload: Filebench
-
