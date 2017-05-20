@@ -1,0 +1,5 @@
+
+telnet 0 5555
+
+migrate -d tcp:0:4446
+

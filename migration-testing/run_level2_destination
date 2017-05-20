@@ -1,0 +1,22 @@
+
+# ***ONLY RUN THIS WITHIN LEVEL1 VM***
+
+# nested level2 dest
+# Migrating to this paused qemu image (host source -> level1 -> level2 dest):
+
+export NO_AT_BRIDGE=1
+
+qemu-system-x86_64 \
+-name mig-L2-Dest \
+-m size=512M,slots=1,maxmem=1024M \
+-boot order=c \
+-drive file=/tmp/guest-imgs/copyRaw-60G.img,media=disk,format=raw,cache=writeback,aio=threads,if=virtio \
+-machine type=pc-i440fx-2.3 \
+-cpu Nehalem \
+-enable-kvm \
+-vga qxl \
+-show-cursor \
+-device virtio-net-pci,netdev=netL2Dest \
+-netdev user,id=netL2Dest \
+-incoming tcp:0:5556 &
+

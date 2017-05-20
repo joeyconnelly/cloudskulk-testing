@@ -1,0 +1,9 @@
+
+sudo dnf install libvirt-daemon-kvm libvirt-daemon-config-network libvirt-daemon-config-nwfilter bridge-utils netcf libguestfs libguestfs-tools libguestfs-tools-c
+
+sudo modprobe -r kvm_intel
+
+sudo modprobe kvm_intel nested=Yes
+
+sudo vim /etc/modprobe.d/kvm.conf 
+
