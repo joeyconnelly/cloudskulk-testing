@@ -1,12 +1,13 @@
 #!/bin/bash
 
-input="bareMetal-kernel.raw"
+tag="bareMetal-to-nested Kernel Workload"
+input="nested-kernel.raw"
 output=${input%.*}
 output+=".csv"
 temp=trash
 
 rm -f $output $temp
-echo -e "bareMetal-to-bareMetal Idle Workload" > $output
+echo -e $tag > $output
 grep -E 'total time:' $input > $temp
 echo -e "End-to-End_Timing:" >> $output
 awk -F ' ' '{print $3}' $temp 1>> $output
