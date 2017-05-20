@@ -10,7 +10,7 @@ qemu-system-x86_64 \
 -name mig-L2-Dest \
 -m size=512M,slots=1,maxmem=1024M \
 -boot order=c \
--drive file=/tmp/guest-imgs/copyRaw-60G.img,media=disk,format=raw,cache=writeback,aio=threads,if=virtio \
+-drive file=/tmp/guest-imgs/copyRAW-60G.img,media=disk,format=raw,cache=writeback,aio=threads,if=virtio \
 -machine type=pc-i440fx-2.3 \
 -cpu Nehalem \
 -enable-kvm \
