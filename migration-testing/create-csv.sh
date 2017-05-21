@@ -1,7 +1,7 @@
 #!/bin/bash
 
-tag="bareMetal-to-nested Kernel Workload"
-input="nested-kernel.raw"
+tag="bareMetal-to-nested Idle Workload"
+input="nested-idle.raw"
 output=${input%.*}
 output+=".csv"
 temp=trash

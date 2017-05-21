@@ -1,0 +1,70 @@
+capabilities: xbzrle: off rdma-pin-all: off auto-converge: off zero-blocks: off 
+Migration status: completed
+total time: 20084 milliseconds
+downtime: 69 milliseconds
+setup: 4 milliseconds
+transferred ram: 680942 kbytes
+throughput: 277.80 mbps
+remaining ram: 0 kbytes
+total ram: 656208 kbytes
+duplicate: 22505 pages
+skipped: 0 pages
+normal: 169854 pages
+normal bytes: 679416 kbytes
+dirty sync count: 3
+capabilities: xbzrle: off rdma-pin-all: off auto-converge: off zero-blocks: off 
+Migration status: completed
+total time: 26883 milliseconds
+downtime: 70 milliseconds
+setup: 2 milliseconds
+transferred ram: 901625 kbytes
+throughput: 274.79 mbps
+remaining ram: 0 kbytes
+total ram: 656208 kbytes
+duplicate: 23897 pages
+skipped: 0 pages
+normal: 224914 pages
+normal bytes: 899656 kbytes
+dirty sync count: 4
+capabilities: xbzrle: off rdma-pin-all: off auto-converge: off zero-blocks: off 
+Migration status: completed
+total time: 27891 milliseconds
+downtime: 70 milliseconds
+setup: 2 milliseconds
+transferred ram: 935789 kbytes
+throughput: 274.89 mbps
+remaining ram: 0 kbytes
+total ram: 656208 kbytes
+duplicate: 23614 pages
+skipped: 0 pages
+normal: 233439 pages
+normal bytes: 933756 kbytes
+dirty sync count: 4
+capabilities: xbzrle: off rdma-pin-all: off auto-converge: off zero-blocks: off 
+Migration status: completed
+total time: 27791 milliseconds
+downtime: 66 milliseconds
+setup: 2 milliseconds
+transferred ram: 931258 kbytes
+throughput: 274.55 mbps
+remaining ram: 0 kbytes
+total ram: 656208 kbytes
+duplicate: 25167 pages
+skipped: 0 pages
+normal: 232305 pages
+normal bytes: 929220 kbytes
+dirty sync count: 4
+bilities: xbzrle: off rdma-pin-all: off auto-converge: off zero-blocks: off 
+Migration status: completed
+total time: 26496 milliseconds
+downtime: 75 milliseconds
+setup: 2 milliseconds
+transferred ram: 890951 kbytes
+throughput: 275.51 mbps
+remaining ram: 0 kbytes
+total ram: 656208 kbytes
+duplicate: 24228 pages
+skipped: 0 pages
+normal: 222250 pages
+normal bytes: 889000 kbytes
+dirty sync count: 4
