@@ -1,0 +1,70 @@
+capabilities: xbzrle: off rdma-pin-all: off auto-converge: off zero-blocks: off 
+Migration status: completed
+total time: 26457 milliseconds
+downtime: 39 milliseconds
+setup: 1 milliseconds
+transferred ram: 888555 kbytes
+throughput: 275.17 mbps
+remaining ram: 0 kbytes
+total ram: 656208 kbytes
+duplicate: 113230 pages
+skipped: 0 pages
+normal: 221457 pages
+normal bytes: 885828 kbytes
+dirty sync count: 6
+bilities: xbzrle: off rdma-pin-all: off auto-converge: off zero-blocks: off 
+Migration status: completed
+total time: 23627 milliseconds
+downtime: 14 milliseconds
+setup: 1 milliseconds
+transferred ram: 798562 kbytes
+throughput: 276.93 mbps
+remaining ram: 0 kbytes
+total ram: 656208 kbytes
+duplicate: 112118 pages
+skipped: 0 pages
+normal: 199005 pages
+normal bytes: 796020 kbytes
+dirty sync count: 6
+capabilities: xbzrle: off rdma-pin-all: off auto-converge: off zero-blocks: off 
+Migration status: completed
+total time: 29452 milliseconds
+downtime: 32 milliseconds
+setup: 2 milliseconds
+transferred ram: 988102 kbytes
+throughput: 274.88 mbps
+remaining ram: 0 kbytes
+total ram: 656208 kbytes
+duplicate: 109584 pages
+skipped: 0 pages
+normal: 246303 pages
+normal bytes: 985212 kbytes
+dirty sync count: 9
+capabilities: xbzrle: off rdma-pin-all: off auto-converge: off zero-blocks: off 
+Migration status: completed
+total time: 27630 milliseconds
+downtime: 23 milliseconds
+setup: 1 milliseconds
+transferred ram: 929562 kbytes
+throughput: 275.65 mbps
+remaining ram: 0 kbytes
+total ram: 656208 kbytes
+duplicate: 108521 pages
+skipped: 0 pages
+normal: 231699 pages
+normal bytes: 926796 kbytes
+dirty sync count: 10
+capabilities: xbzrle: off rdma-pin-all: off auto-converge: off zero-blocks: off 
+Migration status: completed
+total time: 27336 milliseconds
+downtime: 16 milliseconds
+setup: 2 milliseconds
+transferred ram: 918889 kbytes
+throughput: 275.41 mbps
+remaining ram: 0 kbytes
+total ram: 656208 kbytes
+duplicate: 113935 pages
+skipped: 0 pages
+normal: 229024 pages
+normal bytes: 916096 kbytes
+dirty sync count: 7
