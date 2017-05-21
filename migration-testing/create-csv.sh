@@ -1,7 +1,7 @@
 #!/bin/bash
 
 tag="bareMetal-to-nested Filebench Workload"
-input="nested-filebench.csv"
+input="nested-filebench.raw"
 output=${input%.*}
 output+=".csv"
 temp=trash

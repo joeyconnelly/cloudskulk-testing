@@ -1,0 +1,70 @@
+capabilities: xbzrle: off rdma-pin-all: off auto-converge: off zero-blocks: off 
+Migration status: completed
+total time: 20955 milliseconds
+downtime: 146 milliseconds
+setup: 2 milliseconds
+transferred ram: 706935 kbytes
+throughput: 276.42 mbps
+remaining ram: 0 kbytes
+total ram: 656208 kbytes
+duplicate: 109415 pages
+skipped: 0 pages
+normal: 176149 pages
+normal bytes: 704596 kbytes
+dirty sync count: 8
+capabilities: xbzrle: off rdma-pin-all: off auto-converge: off zero-blocks: off 
+Migration status: completed
+total time: 31597 milliseconds
+downtime: 83 milliseconds
+setup: 1 milliseconds
+transferred ram: 1057540 kbytes
+throughput: 274.22 mbps
+remaining ram: 0 kbytes
+total ram: 656208 kbytes
+duplicate: 112243 pages
+skipped: 0 pages
+normal: 263623 pages
+normal bytes: 1054492 kbytes
+dirty sync count: 11
+capabilities: xbzrle: off rdma-pin-all: off auto-converge: off zero-blocks: off 
+Migration status: completed
+total time: 29882 milliseconds
+downtime: 75 milliseconds
+setup: 1 milliseconds
+transferred ram: 1001426 kbytes
+throughput: 274.57 mbps
+remaining ram: 0 kbytes
+total ram: 656208 kbytes
+duplicate: 115318 pages
+skipped: 0 pages
+normal: 249615 pages
+normal bytes: 998460 kbytes
+dirty sync count: 10
+capabilities: xbzrle: off rdma-pin-all: off auto-converge: off zero-blocks: off 
+Migration status: completed
+total time: 29818 milliseconds
+downtime: 105 milliseconds
+setup: 1 milliseconds
+transferred ram: 998796 kbytes
+throughput: 274.44 mbps
+remaining ram: 0 kbytes
+total ram: 656208 kbytes
+duplicate: 114733 pages
+skipped: 0 pages
+normal: 248960 pages
+normal bytes: 995840 kbytes
+dirty sync count: 13
+capabilities: xbzrle: off rdma-pin-all: off auto-converge: off zero-blocks: off 
+Migration status: completed
+total time: 28831 milliseconds
+downtime: 123 milliseconds
+setup: 1 milliseconds
+transferred ram: 965951 kbytes
+throughput: 274.50 mbps
+remaining ram: 0 kbytes
+total ram: 656208 kbytes
+duplicate: 116503 pages
+skipped: 0 pages
+normal: 240761 pages
+normal bytes: 963044 kbytes
+dirty sync count: 7
