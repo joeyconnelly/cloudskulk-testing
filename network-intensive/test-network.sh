@@ -1,10 +1,10 @@
 #!/bin/bash
 
-enableDownload=true
+enableDownload=false
 numRuns=10
 #tag=host-avg
-#tag=level1-avg
-tag=level2-avg
+tag=level1-avg-e1000
+#tag=level2-avg
 file="$tag-network-timing.data"
 temp=net-trash.data
 err=net-error.data
