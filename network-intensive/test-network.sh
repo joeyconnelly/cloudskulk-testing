@@ -1,9 +1,9 @@
 #!/bin/bash
 
-enableDownload=false
+enableDownload=true
 numRuns=10
-tag=host-avg
-#tag=level1-avg
+#tag=host-avg
+tag=level1-avg
 #tag=level2-avg
 file="$tag-network-timing.data"
 temp=net-trash.data
@@ -48,7 +48,7 @@ fi
 #
 # Run benchmark multiple times for average.
 #
-netserver
+netserver 2>/dev/null
 text="Run[#],RecvSockSize[B],SendSockSize[B],SendMsgSize[B],Throughput[MB/sec]"
 quickPrint $text $repoDir/$file
 for (( i=0; i<$numRuns; i++ ))
