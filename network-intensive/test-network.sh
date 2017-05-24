@@ -1,5 +1,6 @@
 #!/bin/bash
 
+enableDownload=false
 numRuns=10
 tag=host-avg
 #tag=level1-avg
@@ -21,12 +22,19 @@ quickPrint(){
 #
 # Download benchmark
 #
+echo -e "---Script Start---"
 repoDir=$(pwd)
 echo -e $tag > $repoDir/$file
-if [ ! -f /$HOME/$version$download ];then
-	echo -e "Installing benchmark now..."
+if [ ! -f /$HOME/$version$download -a "$enableDownload" = true ];then
+	echo -e "Downloading benchmark now..."
 	cd $HOME
 	wget $link
+	if [ $? -eq 0 ];then
+		echo -e "Download successfull.\nInstalling benchmark..."
+	else
+		echo -e "Download issues...\nInstalling benchmark from backup..."
+		cp $repoDir/$version$download $HOME
+	fi
 	tar -xvzf $version$download
 	cd $version
 	./configure
@@ -34,7 +42,7 @@ if [ ! -f /$HOME/$version$download ];then
 	sudo make install
 	cd $repoDir
 else
-	echo -e "Benchmark installation found..."
+	echo -e "Benchmark installation found."
 fi
 
 #
@@ -64,4 +72,5 @@ if [ $contents -eq 0 ];then
 	rm -f $err
 fi
 rm -f $temp
+echo -e "---Script End---"
 
