@@ -3,8 +3,8 @@
 enableDownload=true
 numRuns=10
 #tag=host-avg
-tag=level1-avg
-#tag=level2-avg
+#tag=level1-avg
+tag=level2-avg
 file="$tag-network-timing.data"
 temp=net-trash.data
 err=net-error.data
@@ -28,13 +28,13 @@ echo -e $tag > $repoDir/$file
 if [ ! -f /$HOME/$version$download -a "$enableDownload" = true ];then
 	echo -e "Downloading benchmark now..."
 	cd $HOME
-	wget $link
-	if [ $? -eq 0 ];then
-		echo -e "Download successfull.\nInstalling benchmark..."
-	else
+#	wget $link
+#	if [ $? -eq 0 ];then
+#		echo -e "Download successfull.\nInstalling benchmark..."
+#	else
 		echo -e "Download issues...\nInstalling benchmark from backup..."
 		cp $repoDir/$version$download $HOME
-	fi
+#	fi
 	tar -xvzf $version$download
 	cd $version
 	./configure
