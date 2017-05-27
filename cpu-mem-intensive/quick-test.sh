@@ -1,11 +1,12 @@
 #!/bin/bash
 
 numRuns=3
-testTag="host nested config"
-tag=sdafasfexperimentingA-quick-host
-link="https://cdn.kernel.org/pub/linux/kernel/v4.x/linux-4.11.1.tar.xz"
+testTag="blah"
+tag=gold2
+#link="https://cdn.kernel.org/pub/linux/kernel/v4.x/linux-4.11.1.tar.xz"
+link="https://www.kernel.org/pub/linux/kernel/v3.0/linux-3.19.tar.xz"
 file="$tag-compile-timing.data"
-version="linux-4.11.1"
+version="linux-3.19"
 download=".tar.xz"
 
 repoDir=$(pwd)
@@ -14,14 +15,16 @@ echo -e $tag >> $repoDir/$file
 #for (( i=0; i<$numRuns; i++ ))
 #do
 	cd $HOME
+#	wget $link
 #	rm -rf $version
 #	tar -xvf $version$download
 	cd $version
 #	make defconfig &>/dev/null
-	make clean
+
+#	make clean
 	echo -e "Run[$i]..."
 	startTime=$(date +%s.%N)
-	make -j8 &>/dev/null
+	make -j8
 	endTime=$(date +%s.%N)
 
 	elapsedTime=$(python -c "print(${endTime} - ${startTime})")
