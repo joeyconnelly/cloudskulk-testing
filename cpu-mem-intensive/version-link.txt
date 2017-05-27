@@ -1,3 +1,0 @@
-
-wget https://cdn.kernel.org/pub/linux/kernel/v4.x/linux-4.11.1.tar.xz
-
