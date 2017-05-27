@@ -2,11 +2,11 @@
 
 numRuns=3
 testTag="blah"
-tag=gold2
+tag=gold
 #link="https://cdn.kernel.org/pub/linux/kernel/v4.x/linux-4.11.1.tar.xz"
-link="https://www.kernel.org/pub/linux/kernel/v3.0/linux-3.19.tar.xz"
+link="https://www.kernel.org/pub/linux/kernel/v4.x/linux-4.0.tar.xz"
 file="$tag-compile-timing.data"
-version="linux-3.19"
+version="linux-4.0"
 download=".tar.xz"
 
 repoDir=$(pwd)
@@ -15,11 +15,13 @@ echo -e $tag >> $repoDir/$file
 #for (( i=0; i<$numRuns; i++ ))
 #do
 	cd $HOME
-#	wget $link
+	wget $link
 #	rm -rf $version
-#	tar -xvf $version$download
+	tar -xvf $version$download
 	cd $version
 #	make defconfig &>/dev/null
+
+	make menuconfig
 
 #	make clean
 	echo -e "Run[$i]..."
