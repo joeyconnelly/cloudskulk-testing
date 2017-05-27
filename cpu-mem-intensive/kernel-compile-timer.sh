@@ -28,7 +28,8 @@ do
 	tar -xvf $version$download
 	endDecompress=$(date +%s.%N)
 	totalDecompress=$(python -c "print(${endDecompress} - ${startDecompress})")
-
+	echo -e "\n\n\nRun[$i],$startDecompress,$endDecompress,$totalDecompress\n\n"
+	
 	cd $version
 	if [ "$firstRun" = true ];then
 		make menuconfig
@@ -46,9 +47,9 @@ do
 	make -j8
 	endCompile=$(date +%s.%N)
 	totalCompile=$(python -c "print(${endCompile} - ${startCompile})")
-
-	echo -e "Run[$i],$startDecompress,$endDecompress,$totalDecompress,$startCompile,$endCompile,$totalCompile"
+	echo -e "\n\n\nRun[$i],$startCompile,$endCompile,$totalCompile\n\n"
+	
 	echo -e "Run[$i],$startDecompress,$endDecompress,$totalDecompress,$startCompile,$endCompile,$totalCompile" >> $repoDir/$file
-	cd -
+	cd $HOME
 done
 
