@@ -1,7 +1,7 @@
 #!/bin/bash
 
 numRuns=3
-testTag="kernel compile data in level1 60G"
+testTag="kernel compile data in level1 120G"
 tag=level1-gold
 link="https://www.kernel.org/pub/linux/kernel/v4.x/linux-4.0.tar.xz"
 file="$tag-build.data"
