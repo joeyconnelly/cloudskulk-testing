@@ -1,13 +1,14 @@
 #!/bin/bash
 
 numRuns=3
-testTag="kernel compile data in level1 120G"
+testTag="kernel compile data in level1 60G"
 tag=level1-gold
 link="https://www.kernel.org/pub/linux/kernel/v4.x/linux-4.0.tar.xz"
 file="$tag-build.data"
 version="linux-4.0"
 download=".tar.xz"
 firstRun=false
+virtEnv=true
 
 #
 # Initial files and script directory location.
@@ -35,6 +36,15 @@ if [ "$firstRun" = true ];then
 	cp .config $repoDir
 else
 	cp $repoDir/.config .
+fi
+
+#
+# Fix for virtualized environments not having gcc6.
+#
+if [ "$virtEnv" = true ];then
+	cd include/linux/
+	ln -s compiler-gcc5.h compiler-gcc6.h
+	cd -
 fi
 
 #
