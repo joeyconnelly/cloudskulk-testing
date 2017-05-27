@@ -1,8 +1,7 @@
 #!/bin/bash
 
-numRuns=3
-testTag="kernel compile data in level1 120G"
-tag=level1-gold
+numRuns=1
+tag=level1-not-working
 link="https://www.kernel.org/pub/linux/kernel/v4.x/linux-4.0.tar.xz"
 file="$tag-build.data"
 version="linux-4.0"
@@ -10,60 +9,46 @@ download=".tar.xz"
 firstRun=false
 virtEnv=true
 
-#
-# Initial files and script directory location.
-#
-repoDir=$(pwd)
-echo -e $headerTag > $repoDir/$file
-echo -e $tag >> $repoDir/$file
 
-#
-# Download kernel version if not found.
-#
+
+repoDir=$(pwd)
+echo -e $tag > $repoDir/$file
+echo -e "Run[#],startDecomp,endDecomp,totalDecomp,startComp,endComp,totalComp" >> $repoDir/$file
+
 cd $HOME
 if [ ! -f $version$download ];then
 	wget $link
 fi
-rm -rf $version
-tar -xvf $version$download
 
-#
-# Use the same host config file for all.
-#
-cd $version
-if [ "$firstRun" = true ];then
-	make menuconfig
-	cp .config $repoDir
-else
-	cp $repoDir/.config .
-fi
-
-#
-# Fix for virtualized environments not having gcc6.
-#
-if [ "$virtEnv" = true ];then
-	cd include/linux/
-	ln -s compiler-gcc5.h compiler-gcc6.h
-	cd -
-fi
-
-#
-# Compile the kernel + save build times.
-#
 for (( i=0; i<$numRuns; i++ ))
 do
-	make clean
+	rm -rf $version
 
-	startTime=$(date +%s.%N)
+	startDecompress=$(date +%s.%N)
+	tar -xvf $version$download
+	endDecompress=$(date +%s.%N)
+	totalDecompress=$(python -c "print(${endDecompress} - ${startDecompress})")
+
+	cd $version
+	if [ "$firstRun" = true ];then
+		make menuconfig
+		cp .config $repoDir
+	else
+		cp $repoDir/.config .
+	fi
+	if [ "$virtEnv" = true ];then
+		cd include/linux/
+		ln -s compiler-gcc5.h compiler-gcc6.h
+		cd -
+	fi
+	
+	startCompile=$(date +%s.%N)
 	make -j8
-	endTime=$(date +%s.%N)
+	endCompile=$(date +%s.%N)
+	totalCompile=$(python -c "print(${endCompile} - ${startCompile})")
 
-	elapsedTime=$(python -c "print(${endTime} - ${startTime})")
-	echo -e "Run[$i],Start_Time(seconds),$startTime"
-	echo -e "Run[$i],Start_Time(seconds),$startTime" >> $repoDir/$file
-	echo -e "Run[$i],End_Time(seconds),$endTime"
-	echo -e "Run[$i],End_Time(seconds),$endTime" >> $repoDir/$file
-	echo -e "Run[$i],Elapsed_Time(seconds),$elapsedTime"
-	echo -e "Run[$i],Elapsed_Time(seconds),$elapsedTime" >> $repoDir/$file
+	echo -e "Run[$i],$startDecompress,$endDecompress,$totalDecompress,$startCompile,$endCompile,$totalCompile"
+	echo -e "Run[$i],$startDecompress,$endDecompress,$totalDecompress,$startCompile,$endCompile,$totalCompile" >> $repoDir/$file
+	cd -
 done
 
