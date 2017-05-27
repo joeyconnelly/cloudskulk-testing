@@ -1,0 +1,11 @@
+L1 -> vDRAM=2G, cpus=numa=DEF, make -j8
+experimentingC-quick-level1
+Run[0],Start_Time(seconds),1495839231.161325331
+Run[0],End_Time(seconds),1495839363.260327299
+Run[0],Elapsed_Time(seconds),132.099002123
+Run[1],Start_Time(seconds),1495839372.945278980
+Run[1],End_Time(seconds),1495839504.839508085
+Run[1],Elapsed_Time(seconds),131.894229174
+Run[2],Start_Time(seconds),1495839515.381519359
+Run[2],End_Time(seconds),1495839647.625576902
+Run[2],Elapsed_Time(seconds),132.244057655

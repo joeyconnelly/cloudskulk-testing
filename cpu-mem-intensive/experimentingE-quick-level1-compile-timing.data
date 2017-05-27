@@ -1,0 +1,11 @@
+L1 -> vDRAM=2G, cpus=8, make -j16
+experimentingE-quick-level1
+Run[0],Start_Time(seconds),1495840311.001541439
+Run[0],End_Time(seconds),1495840443.938879818
+Run[0],Elapsed_Time(seconds),132.937338352
+Run[1],Start_Time(seconds),1495840458.078869079
+Run[1],End_Time(seconds),1495840591.861845120
+Run[1],Elapsed_Time(seconds),133.782975912
+Run[2],Start_Time(seconds),1495840605.350690021
+Run[2],End_Time(seconds),1495840738.424595297
+Run[2],Elapsed_Time(seconds),133.07390523

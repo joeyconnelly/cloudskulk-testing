@@ -1,0 +1,5 @@
+L1 -> vDRAM=2G, cpus=numa=DEF, make
+experimentingD-quick-level1
+
+//killed because it took WAY TOO LONG!!
+!

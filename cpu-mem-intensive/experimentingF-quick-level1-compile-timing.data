@@ -1,0 +1,11 @@
+L1 -> vDRAM=2G, cpus8, make -j4
+experimentingF-quick-level1
+Run[0],Start_Time(seconds),1495840878.813010215
+Run[0],End_Time(seconds),1495841063.460729000
+Run[0],Elapsed_Time(seconds),184.647718668
+Run[1],Start_Time(seconds),1495841075.432745541
+Run[1],End_Time(seconds),1495841258.170510371
+Run[1],Elapsed_Time(seconds),182.737764835
+Run[2],Start_Time(seconds),1495841271.976298777
+Run[2],End_Time(seconds),1495841455.179544090
+Run[2],Elapsed_Time(seconds),183.203245163

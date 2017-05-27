@@ -1,8 +1,8 @@
 #!/bin/bash
 
 numRuns=3
-testTag="L1 -> vDRAM=12G, cpus=numa=DEF, make -j8"
-tag=experimentingC-quick-level1
+testTag="L1 -> vDRAM=2G, cpus8, numa=def, make -j8"
+tag=experimentingG-quick-level1
 link="https://cdn.kernel.org/pub/linux/kernel/v4.x/linux-4.11.1.tar.xz"
 file="$tag-compile-timing.data"
 version="linux-4.11.1"
