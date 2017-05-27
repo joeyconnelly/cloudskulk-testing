@@ -6,7 +6,7 @@ export NO_AT_BRIDGE=1
 #-name level1 \
 #-m 8192 \
 #-boot c \
-#-hda /tmp/guest-imgs/diskRAW-120G.img \
+#-hda /tmp/diskRAW-120G.img \
 #-cpu host,+vmx \
 #-smp cpus=8 \
 #-machine accel=kvm \
@@ -17,7 +17,7 @@ qemu-system-x86_64 \
 -name level1 \
 -m size=2G \
 -boot order=c \
--drive file=~/diskRAW-120G.img,media=disk,format=raw,cache=writeback,if=virtio \
+-drive file=/tmp/diskRAW-120G.img,media=disk,format=raw,cache=writeback,if=virtio \
 -cpu host,+vmx \
 -smp cpus=8,cores=4,threads=2,sockets=1,maxcpus=8 \
 -machine accel=kvm \
@@ -40,4 +40,8 @@ qemu-system-x86_64 \
 -show-cursor \
 -device virtio-net-pci,netdev=netLevel1 \
 -netdev user,id=netLevel1 &
+
+qemu-system-x86_64 -m 8192 -boot c -hda diskRAW-60G.img -smp cpus=8 -machine accel=kvm &
+
+qemu-system-x86_64 -name level1 -m 8192 -boot c -hda diskRAW-120G.img -cpu host,+vmx -smp cpus=8 -machine accel=kvm -enable-kvm &
 
