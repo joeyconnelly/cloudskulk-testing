@@ -1,0 +1,9 @@
+ld: final link failed: No space left on device
+scripts/Makefile.build:337: recipe for target 'drivers/built-in.o' failed
+make[1]: *** [drivers/built-in.o] Error 1
+Makefile:947: recipe for target 'drivers' failed
+make: *** [drivers] Error 2
+
+new-level1-60G-qcow2
+Run[#],startDecomp,endDecomp,totalDecomp,startComp,endComp,totalComp
+Run[0],1496179832.511936640,1496179840.912880188,8.40094351768,1496179844.439107475,1496180540.833779279,696.394671917

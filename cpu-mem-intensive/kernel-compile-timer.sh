@@ -1,7 +1,7 @@
 #!/bin/bash
 
 numRuns=5
-tag=level1-all
+tag=new-level1-60G-qcow2
 link="https://www.kernel.org/pub/linux/kernel/v4.x/linux-4.0.tar.xz"
 file="$tag-build.data"
 version="linux-4.0"
