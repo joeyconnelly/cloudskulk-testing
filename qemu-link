@@ -1,0 +1,6 @@
+#!/bin/bash
+
+#wget https://github.com/qemu/qemu/archive/v2.9.0.tar.gz
+
+tar -xvzf v2.9.0.tar.gz
+
