@@ -1,25 +1,34 @@
 
 sudo ./x86_64-softmmu/qemu-system-x86_64 \
 -name level1 \
--m 15360 \
+-m size=1G,slots=1,maxmem=2G \
 -boot c \
 -drive file=/dev/sda6,index=0,media=disk,format=raw,cache=none,if=virtio \
 -drive file=/dev/sda7,index=1,media=disk,format=raw,cache=none,if=virtio \
 -cpu qemu64,+x2apic,+vmx \
--smp 8 \
--net nic,vlan=0 \
--net user,vlan=0 \
--redir tcp:5022::22 \
 -machine accel=kvm \
+-smp 8 \
 -curses \
--serial stdio
+-serial stdio \
+-device virtio-net-pci,netdev=netLevel1 \
+-netdev user,id=netLevel1,hostfwd=tcp::7777-:22
+
+## Jidong's old way of doing the above:
+#-net nic,vlan=0 \
+#-net user,vlan=0 \
+#-redir tcp:5022::22 
 
 rm -f ~/.ssh/known_hosts
-ssh -p 5022 level1@localhost
+ssh -p 7777 level1@localhost
 
-
-
-
+./x86_64-softmmu/qemu-system-x86_64 \
+-name level1 \
+-m size=1G,slots=1,maxmem=2G \
+-boot c \
+-drive file=/home/jconnell/disk60G.raw,index=0,media=disk,format=raw,cache=none,if=virtio \
+-cpu qemu64,+x2apic,+vmx \
+-machine accel=kvm \
+-smp 8 \
 -vga virtio \
 -show-cursor \
 -device virtio-net-pci,netdev=netLevel1 \
