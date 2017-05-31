@@ -1,0 +1,27 @@
+
+sudo ./x86_64-softmmu/qemu-system-x86_64 \
+-name level1 \
+-m 15360 \
+-boot c \
+-drive file=/dev/sda6,index=0,media=disk,format=raw,cache=none,if=virtio \
+-drive file=/dev/sda7,index=1,media=disk,format=raw,cache=none,if=virtio \
+-cpu qemu64,+x2apic,+vmx \
+-smp 8 \
+-net nic,vlan=0 \
+-net user,vlan=0 \
+-redir tcp:5022::22 \
+-machine accel=kvm \
+-curses \
+-serial stdio
+
+rm -f ~/.ssh/known_hosts
+ssh -p 5022 level1@localhost
+
+
+
+
+-vga virtio \
+-show-cursor \
+-device virtio-net-pci,netdev=netLevel1 \
+-netdev user,id=netLevel1 &
+
