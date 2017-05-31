@@ -1,7 +1,8 @@
 #!/bin/bash
 
 numRuns=5
-tag=new-level2-60G-raw-sda7-homeDir
+tag=new-host
+#tag=new-level2-60G-raw-sda7-homeDir
 link="https://www.kernel.org/pub/linux/kernel/v4.x/linux-4.0.tar.xz"
 file="$tag-build.data"
 version="linux-4.0"
@@ -24,13 +25,13 @@ fi
 
 for (( i=0; i<$numRuns; i++ ))
 do
-	if [ $i = 1 ];then
-		echo "Do you want to continue (y|n): "
-		read input_variable
-		if [ "$input_variable" == "n" ];then
-			exit -1
-		fi
-	fi
+#	if [ $i = 1 ];then
+#		echo "Do you want to continue (y|n): "
+#		read input_variable
+#		if [ "$input_variable" == "n" ];then
+#			exit -1
+#		fi
+#	fi
 	rm -rf $version
 
 	startDecompress=$(date +%s.%N)
