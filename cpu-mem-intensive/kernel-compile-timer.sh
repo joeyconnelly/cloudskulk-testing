@@ -1,12 +1,15 @@
 #!/bin/bash
 
 numRuns=5
-tag=new-level1-60G-raw-sda6
+tag=new-level1-60G-raw-sda6-homeDir
 link="https://www.kernel.org/pub/linux/kernel/v4.x/linux-4.0.tar.xz"
 file="$tag-build.data"
 version="linux-4.0"
 download=".tar.xz"
+#dir=/time-kernel-builds
+dir=$HOME
 firstRun=false
+
 
 repoDir=$(pwd)
 echo -e $tag > $repoDir/$file
@@ -29,10 +32,12 @@ do
 			exit -1
 		fi
 	fi
-	sudo rm -rf $version
+	#sudo rm -rf $version
+	rm -rf $version
 
 	startDecompress=$(date +%s.%N)
-	sudo tar -xvf $version$download
+	#sudo tar -xvf $version$download
+	tar -xvf $version$download
 	endDecompress=$(date +%s.%N)
 	totalDecompress=$(python -c "print(${endDecompress} - ${startDecompress})")
 	echo -e "\n\n\nDecompressRun[$i],$startDecompress,$endDecompress,$totalDecompress\n\n\n"
@@ -42,12 +47,15 @@ do
 		sudo make menuconfig
 		sudo cp .config $repoDir
 	else
-		sudo cp $repoDir/.config .
+		#sudo cp $repoDir/.config .
+		cp $repoDir/.config .
 	fi
 	
-	sudo make clean
+	#sudo make clean
+	make clean
 	startCompile=$(date +%s.%N)
-	sudo make -j8
+	#sudo make -j8
+	make -j8
 	endCompile=$(date +%s.%N)
 	totalCompile=$(python -c "print(${endCompile} - ${startCompile})")
 	echo -e "\n\n\nCompileRun[$i],$startCompile,$endCompile,$totalCompile\n\n"
