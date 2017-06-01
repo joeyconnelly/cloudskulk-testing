@@ -1,6 +1,6 @@
 #!/bin/bash
 
-tag=level1
+tag=level2
 header="LMBench FINISHED: $tag"
 email=joeyconnelly@u.boisestate.edu
 file=/tmp/email.txt
@@ -8,6 +8,7 @@ version="lmbench-3.0-a9"
 download="lmbench-3.0-a9.tgz"
 dir=$HOME
 
+sudo dnf install sendmail
 
 repoDir=$(pwd)
 cd $dir
