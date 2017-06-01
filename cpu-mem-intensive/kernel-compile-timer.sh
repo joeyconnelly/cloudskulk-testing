@@ -1,8 +1,7 @@
 #!/bin/bash
 
 numRuns=5
-tag=new-host
-#tag=new-level2-60G-raw-sda7-homeDir
+tag=new-level1-60G-raw-sda6-homeDir-2G
 link="https://www.kernel.org/pub/linux/kernel/v4.x/linux-4.0.tar.xz"
 file="$tag-build.data"
 version="linux-4.0"
@@ -59,3 +58,5 @@ do
 	cd $dir
 done
 
+rm -f $version$download
+rm -rf $version
