@@ -1,0 +1,941 @@
+[lmbench3.0 results for Linux localhost.localdomain 4.4.14 #1 SMP Tue May 30 15:07:47 MDT 2017 x86_64 x86_64 x86_64 GNU/Linux]
+[LMBENCH_VER: 3.0-a9]
+[BENCHMARK_HARDWARE: YES]
+[BENCHMARK_OS: YES]
+[ALL: 512 1k 2k 4k 8k 16k 32k 64k 128k 256k 512k 1m 2m 4m 8m 16m 32m 64m 128m 256m 512m]
+[DISKS: ]
+[DISK_DESC: ]
+[ENOUGH: 5000]
+[FAST: ]
+[FASTMEM: NO]
+[FILE: /usr/tmp/XXX]
+[FSDIR: /usr/tmp]
+[HALF: 512 1k 2k 4k 8k 16k 32k 64k 128k 256k 512k 1m 2m 4m 8m 16m 32m 64m 128m 256m]
+[INFO: INFO.localhost.localdomain]
+[LINE_SIZE: ]
+[LOOP_O: 0.00000000]
+[MB: 694]
+[MHZ: 3977 MHz, 0.2514 nanosec clock]
+[MOTHERBOARD: ]
+[NETWORKS: ]
+[PROCESSORS: 8]
+[REMOTE: ]
+[SLOWFS: NO]
+[OS: x86_64-linux-gnu]
+[SYNC_MAX: 1]
+[LMBENCH_SCHED: DEFAULT]
+[TIMING_O: 0]
+[LMBENCH VERSION: 3.0-a9]
+[USER: level1]
+[HOSTNAME: localhost.localdomain]
+[NODENAME: localhost.localdomain]
+[SYSNAME: Linux]
+[PROCESSOR: x86_64]
+[MACHINE: x86_64]
+[RELEASE: 4.4.14]
+[VERSION: #1 SMP Tue May 30 15:07:47 MDT 2017]
+[Thu Jun 1 00:03:06 MDT 2017]
+[ 00:03:06 up 3 min, 1 user, load average: 0.31, 0.41, 0.19]
+[net: Kernel Interface table]
+[net: Iface      MTU    RX-OK RX-ERR RX-DRP RX-OVR    TX-OK TX-ERR TX-DRP TX-OVR Flg]
+[net: eth0      1500     5377      0      0 0          3760      0      0      0 BMRU]
+[if: eth0: flags=4163<UP,BROADCAST,RUNNING,MULTICAST>  mtu 1500]
+[if: inet 10.0.2.15  netmask 255.255.255.0  broadcast 10.0.2.255]
+[if: inet6 fe80::5054:ff:fe12:3456  prefixlen 64  scopeid 0x20<link>]
+[if: ether 52:54:00:12:34:56  txqueuelen 1000  (Ethernet)]
+[if: RX packets 5377  bytes 2899076 (2.7 MiB)]
+[if: RX errors 0  dropped 0  overruns 0  frame 0]
+[if: TX packets 3760  bytes 399513 (390.1 KiB)]
+[if: TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0]
+[if: ]
+[net: lo       65536        4      0      0 0             4      0      0      0 LRU]
+[if: lo: flags=73<UP,LOOPBACK,RUNNING>  mtu 65536]
+[if: inet 127.0.0.1  netmask 255.0.0.0]
+[if: inet6 ::1  prefixlen 128  scopeid 0x10<host>]
+[if: loop  txqueuelen 1  (Local Loopback)]
+[if: RX packets 4  bytes 340 (340.0 B)]
+[if: RX errors 0  dropped 0  overruns 0  frame 0]
+[if: TX packets 4  bytes 340 (340.0 B)]
+[if: TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0]
+[if: ]
+[net: virbr0    1500        0      0      0 0             0      0      0      0 BMU]
+[if: virbr0: flags=4099<UP,BROADCAST,MULTICAST>  mtu 1500]
+[if: inet 192.168.122.1  netmask 255.255.255.0  broadcast 192.168.122.255]
+[if: ether 52:54:00:a4:28:3f  txqueuelen 1000  (Ethernet)]
+[if: RX packets 0  bytes 0 (0.0 B)]
+[if: RX errors 0  dropped 0  overruns 0  frame 0]
+[if: TX packets 0  bytes 0 (0.0 B)]
+[if: TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0]
+[if: ]
+[mount: sysfs on /sys type sysfs (rw,nosuid,nodev,noexec,relatime,seclabel)]
+[mount: proc on /proc type proc (rw,nosuid,nodev,noexec,relatime)]
+[mount: devtmpfs on /dev type devtmpfs (rw,nosuid,seclabel,size=490808k,nr_inodes=122702,mode=755)]
+[mount: securityfs on /sys/kernel/security type securityfs (rw,nosuid,nodev,noexec,relatime)]
+[mount: tmpfs on /dev/shm type tmpfs (rw,nosuid,nodev,seclabel)]
+[mount: devpts on /dev/pts type devpts (rw,nosuid,noexec,relatime,seclabel,gid=5,mode=620,ptmxmode=000)]
+[mount: tmpfs on /run type tmpfs (rw,nosuid,nodev,seclabel,mode=755)]
+[mount: tmpfs on /sys/fs/cgroup type tmpfs (ro,nosuid,nodev,noexec,seclabel,mode=755)]
+[mount: cgroup on /sys/fs/cgroup/systemd type cgroup (rw,nosuid,nodev,noexec,relatime,xattr,release_agent=/usr/lib/systemd/systemd-cgroups-agent,name=systemd)]
+[mount: pstore on /sys/fs/pstore type pstore (rw,nosuid,nodev,noexec,relatime,seclabel)]
+[mount: cgroup on /sys/fs/cgroup/blkio type cgroup (rw,nosuid,nodev,noexec,relatime,blkio)]
+[mount: cgroup on /sys/fs/cgroup/cpu,cpuacct type cgroup (rw,nosuid,nodev,noexec,relatime,cpu,cpuacct)]
+[mount: cgroup on /sys/fs/cgroup/cpuset type cgroup (rw,nosuid,nodev,noexec,relatime,cpuset)]
+[mount: cgroup on /sys/fs/cgroup/net_cls,net_prio type cgroup (rw,nosuid,nodev,noexec,relatime,net_cls,net_prio)]
+[mount: cgroup on /sys/fs/cgroup/pids type cgroup (rw,nosuid,nodev,noexec,relatime,pids)]
+[mount: cgroup on /sys/fs/cgroup/perf_event type cgroup (rw,nosuid,nodev,noexec,relatime,perf_event)]
+[mount: cgroup on /sys/fs/cgroup/devices type cgroup (rw,nosuid,nodev,noexec,relatime,devices)]
+[mount: cgroup on /sys/fs/cgroup/hugetlb type cgroup (rw,nosuid,nodev,noexec,relatime,hugetlb)]
+[mount: cgroup on /sys/fs/cgroup/memory type cgroup (rw,nosuid,nodev,noexec,relatime,memory)]
+[mount: cgroup on /sys/fs/cgroup/freezer type cgroup (rw,nosuid,nodev,noexec,relatime,freezer)]
+[mount: configfs on /sys/kernel/config type configfs (rw,relatime)]
+[mount: /dev/mapper/fedora-root on / type ext4 (rw,relatime,seclabel,data=ordered)]
+[mount: selinuxfs on /sys/fs/selinux type selinuxfs (rw,relatime)]
+[mount: mqueue on /dev/mqueue type mqueue (rw,relatime,seclabel)]
+[mount: tmpfs on /tmp type tmpfs (rw,seclabel)]
+[mount: systemd-1 on /proc/sys/fs/binfmt_misc type autofs (rw,relatime,fd=32,pgrp=1,timeout=300,minproto=5,maxproto=5,direct)]
+[mount: debugfs on /sys/kernel/debug type debugfs (rw,relatime,seclabel)]
+[mount: hugetlbfs on /dev/hugepages type hugetlbfs (rw,relatime,seclabel)]
+[mount: nfsd on /proc/fs/nfsd type nfsd (rw,relatime)]
+[mount: /dev/vda1 on /boot type ext4 (rw,relatime,seclabel,data=ordered)]
+[mount: /dev/mapper/fedora-home on /home type ext4 (rw,relatime,seclabel,data=ordered)]
+[mount: sunrpc on /var/lib/nfs/rpc_pipefs type rpc_pipefs (rw,relatime)]
+[mount: tmpfs on /run/user/42 type tmpfs (rw,nosuid,nodev,relatime,seclabel,size=101612k,mode=700,uid=42,gid=42)]
+[mount: tmpfs on /run/user/1000 type tmpfs (rw,nosuid,nodev,relatime,seclabel,size=101612k,mode=700,uid=1000,gid=1000)]
+Simple syscall: 0.0351 microseconds
+Simple read: 0.0756 microseconds
+Simple write: 0.0596 microseconds
+Simple stat: 0.4748 microseconds
+Simple fstat: 0.0869 microseconds
+Simple open/close: 0.8498 microseconds
+Select on 10 fd's: 0.2356 microseconds
+Select on 100 fd's: 0.6885 microseconds
+Select on 250 fd's: 1.4987 microseconds
+Select on 500 fd's: 2.7733 microseconds
+Select on 10 tcp fd's: 0.2651 microseconds
+Select on 100 tcp fd's: 1.8413 microseconds
+Select on 250 tcp fd's: 4.4717 microseconds
+Select on 500 tcp fd's: 8.9104 microseconds
+Signal handler installation: 0.0959 microseconds
+Signal handler overhead: 0.5764 microseconds
+Protection fault: 0.2909 microseconds
+Pipe latency: 6.7456 microseconds
+AF_UNIX sock stream latency: 5.3738 microseconds
+Process fork+exit: 73.6486 microseconds
+Process fork+execve: 275.0500 microseconds
+Process fork+/bin/sh -c: 966.6667 microseconds
+integer bit: 0.25 nanoseconds
+integer add: 0.13 nanoseconds
+integer mul: -0.01 nanoseconds
+integer div: 5.96 nanoseconds
+integer mod: 6.39 nanoseconds
+int64 bit: 0.25 nanoseconds
+uint64 add: 0.13 nanoseconds
+int64 mul: -0.01 nanoseconds
+int64 div: 10.64 nanoseconds
+int64 mod: 10.71 nanoseconds
+float add: 0.75 nanoseconds
+float mul: 1.26 nanoseconds
+float div: 3.32 nanoseconds
+double add: 0.75 nanoseconds
+double mul: 1.26 nanoseconds
+double div: 5.07 nanoseconds
+float bogomflops: 1.79 nanoseconds
+double bogomflops: 3.52 nanoseconds
+integer bit parallelism: 3.69
+integer add parallelism: 1.89
+integer mul parallelism: 19.38
+integer div parallelism: 2.96
+integer mod parallelism: 3.38
+int64 bit parallelism: 3.05
+int64 add parallelism: 1.89
+int64 mul parallelism: 22.81
+int64 div parallelism: 1.65
+int64 mod parallelism: 1.52
+float add parallelism: 3.00
+float mul parallelism: 9.42
+float div parallelism: 1.83
+double add parallelism: 3.00
+double mul parallelism: 9.43
+double div parallelism: 1.43
+File /usr/tmp/XXX write bandwidth: 102274 KB/sec
+Pagefaults on /usr/tmp/XXX: 0.1531 microseconds
+
+"mappings
+0.524288 3.776
+1.048576 6.329
+2.097152 9.447
+4.194304 18
+8.388608 34
+16.777216 67
+33.554432 132
+67.108864 264
+134.217728 533
+268.435456 1069
+536.870912 2141
+
+"File system latency
+0k	649	121718	361860
+1k	514	97073	268977
+4k	532	95821	273863
+10k	425	77118	204260
+
+Cannot register service: RPC: Unable to receive; errno = Connection refused
+unable to register (XACT_PROG, XACT_VERS, udp).
+UDP latency using localhost: 9.1542 microseconds
+TCP latency using localhost: 12.8453 microseconds
+localhost: RPC: Port mapper failure - RPC: Unable to receive
+localhost: RPC: Remote system error - Connection refused
+(null): RPC: Port mapper failure - RPC: Unable to receive
+TCP/IP connection cost to localhost: 40.2246 microseconds
+
+Socket bandwidth using localhost
+0.000001 5.30 MB/sec
+0.000064 258.62 MB/sec
+0.000128 285.15 MB/sec
+0.000256 971.53 MB/sec
+0.000512 1031.40 MB/sec
+0.001024 2792.28 MB/sec
+0.001437 3404.63 MB/sec
+10.000000 6532.75 MB/sec
+
+Avg xfer: 3.2KB, 41.8KB in 1.2400 millisecs, 33.69 MB/sec
+AF_UNIX sock stream bandwidth: 13715.69 MB/sec
+Pipe bandwidth: 5693.52 MB/sec
+
+"read bandwidth
+0.000512 2389.89
+0.001024 4373.78
+0.002048 7652.58
+0.004096 12322.46
+0.008192 15423.72
+0.016384 15999.15
+0.032768 14430.85
+0.065536 14454.56
+0.131072 14394.91
+0.262144 13907.24
+0.524288 13766.86
+1.05 13751.18
+2.10 13751.82
+4.19 13736.80
+8.39 10866.07
+16.78 8616.96
+33.55 8629.15
+67.11 8087.35
+134.22 8583.89
+268.44 8689.76
+536.87 8650.28
+
+"read open2close bandwidth
+0.000512 483.14
+0.001024 952.98
+0.002048 1850.30
+0.004096 3473.22
+0.008192 5920.28
+0.016384 7878.79
+0.032768 10324.34
+0.065536 12038.19
+0.131072 12291.29
+0.262144 13019.30
+0.524288 13310.56
+1.05 13495.71
+2.10 13567.53
+4.19 13662.23
+8.39 10703.66
+16.78 8710.91
+33.55 8125.54
+67.11 8181.01
+134.22 8139.83
+268.44 8163.60
+536.87 8647.35
+
+
+"Mmap read bandwidth
+0.000512 50258.43
+0.001024 38443.45
+0.002048 40041.05
+0.004096 40916.22
+0.008192 41295.20
+0.016384 41509.40
+0.032768 41334.01
+0.065536 37993.96
+0.131072 37882.23
+0.262144 35779.31
+0.524288 34449.92
+1.05 34497.91
+2.10 34455.70
+4.19 30513.03
+8.39 21552.67
+16.78 15194.00
+33.55 14646.19
+67.11 15286.76
+134.22 15112.91
+268.44 14827.41
+536.87 14609.53
+
+"Mmap read open2close bandwidth
+0.000512 262.87
+0.001024 525.24
+0.002048 1037.23
+0.004096 2008.84
+0.008192 3575.75
+0.016384 5981.37
+0.032768 8295.17
+0.065536 10892.59
+0.131072 12355.86
+0.262144 14754.04
+0.524288 15887.52
+1.05 16650.59
+2.10 17034.28
+4.19 17074.16
+8.39 12183.89
+16.78 11297.79
+33.55 10114.37
+67.11 8608.11
+134.22 9595.21
+268.44 9759.51
+536.87 9948.32
+
+
+"libc bcopy unaligned
+0.000512 27880.34
+0.001024 29072.45
+0.002048 30722.23
+0.004096 30371.29
+0.008192 31015.38
+0.016384 28601.69
+0.032768 24830.33
+0.065536 24977.92
+0.131072 22183.99
+0.262144 18263.26
+0.524288 18371.55
+1.05 18285.79
+2.10 18062.68
+4.19 13042.47
+8.39 7280.51
+16.78 6857.17
+33.55 6560.01
+67.11 6549.76
+134.22 6653.66
+268.44 6540.51
+
+"libc bcopy aligned
+0.000512 27882.12
+0.001024 29659.37
+0.002048 30723.34
+0.004096 30362.22
+0.008192 31064.25
+0.016384 29138.09
+0.032768 24928.91
+0.065536 25058.95
+0.131072 23905.59
+0.262144 18728.18
+0.524288 18880.99
+1.05 18759.11
+2.10 18491.28
+4.19 11691.98
+8.39 7441.99
+16.78 6649.71
+33.55 6535.73
+67.11 6548.48
+134.22 6449.98
+268.44 6444.87
+
+Memory bzero bandwidth
+0.000512 55015.57
+0.001024 58993.28
+0.002048 61219.65
+0.004096 60764.68
+0.008192 62272.78
+0.016384 62923.31
+0.032768 57106.74
+0.065536 41183.13
+0.131072 40898.85
+0.262144 38198.85
+0.524288 29656.91
+1.05 29510.01
+2.10 29703.55
+4.19 29132.73
+8.39 19459.37
+16.78 12485.37
+33.55 10143.42
+67.11 10441.71
+134.22 10068.09
+268.44 10334.38
+536.87 10344.13
+
+"unrolled bcopy unaligned
+0.000512 15901.50
+0.001024 15897.24
+0.002048 15899.46
+0.004096 15897.35
+0.008192 15891.59
+0.016384 15680.82
+0.032768 13832.34
+0.065536 14014.68
+0.131072 13374.21
+0.262144 12210.77
+0.524288 12232.75
+1.05 12231.74
+2.10 12108.27
+4.19 9225.62
+8.39 7418.30
+16.78 6740.54
+33.55 6649.71
+67.11 6645.10
+134.22 6643.13
+268.44 6633.44
+
+"unrolled partial bcopy unaligned
+0.000512 63585.04
+0.001024 63603.66
+0.002048 63568.19
+0.004096 62967.25
+0.008192 63583.72
+0.016384 57894.96
+0.032768 31212.77
+0.065536 30967.17
+0.131072 27578.77
+0.262144 19705.71
+0.524288 19284.37
+1.05 19143.15
+2.10 19026.96
+4.19 11783.96
+8.39 7499.20
+16.78 6702.84
+33.55 6701.50
+67.11 6699.50
+134.22 6673.51
+268.44 6744.78
+
+Memory read bandwidth
+0.000512 20322.18
+0.001024 20679.31
+0.002048 20852.36
+0.004096 20947.26
+0.008192 20993.30
+0.016384 21017.79
+0.032768 20676.62
+0.065536 20489.78
+0.131072 20488.26
+0.262144 19868.09
+0.524288 20027.90
+1.05 20020.54
+2.10 20037.76
+4.19 19921.79
+8.39 16887.75
+16.78 14583.81
+33.55 14146.05
+67.11 10985.25
+134.22 14035.11
+268.44 10925.78
+536.87 14153.51
+
+Memory partial read bandwidth
+0.000512 96978.56
+0.001024 109184.15
+0.002048 114400.87
+0.004096 116965.38
+0.008192 118209.18
+0.016384 115601.69
+0.032768 113521.70
+0.065536 76585.37
+0.131072 74701.15
+0.262144 55334.64
+0.524288 48085.87
+1.05 48087.56
+2.10 48086.14
+4.19 46842.28
+8.39 30835.07
+16.78 18624.11
+33.55 17494.49
+67.11 17271.62
+134.22 17630.07
+268.44 16708.29
+536.87 17715.00
+
+Memory write bandwidth
+0.000512 15903.16
+0.001024 15899.10
+0.002048 15899.93
+0.004096 15898.94
+0.008192 15899.93
+0.016384 15899.21
+0.032768 15796.41
+0.065536 14948.09
+0.131072 14945.91
+0.262144 14668.71
+0.524288 13931.05
+1.05 13857.00
+2.10 13862.92
+4.19 13731.81
+8.39 12368.02
+16.78 11503.06
+33.55 10464.50
+67.11 10038.72
+134.22 9838.57
+268.44 9805.50
+536.87 9844.16
+
+Memory partial write bandwidth
+0.000512 63620.74
+0.001024 63595.74
+0.002048 63600.66
+0.004096 63595.28
+0.008192 63585.24
+0.016384 63527.04
+0.032768 60127.22
+0.065536 41180.05
+0.131072 40953.84
+0.262144 35329.65
+0.524288 29773.91
+1.05 29512.58
+2.10 29725.21
+4.19 29225.99
+8.39 19185.77
+16.78 12420.67
+33.55 10151.09
+67.11 10115.90
+134.22 10069.60
+268.44 10061.68
+536.87 10296.92
+
+Memory partial read/write bandwidth
+0.000512 63599.26
+0.001024 63582.49
+0.002048 63600.43
+0.004096 63606.81
+0.008192 63601.76
+0.016384 63597.18
+0.032768 62983.90
+0.065536 38359.34
+0.131072 37117.95
+0.262144 33565.48
+0.524288 27542.88
+1.05 27563.88
+2.10 27559.33
+4.19 27884.57
+8.39 18850.80
+16.78 9989.41
+33.55 10151.09
+67.11 9699.21
+134.22 10090.04
+268.44 9671.26
+536.87 10365.10
+
+
+
+"size=0k ovr=0.32
+2 3.09
+4 1.78
+8 2.73
+16 3.72
+24 3.17
+32 4.03
+64 4.09
+96 4.09
+
+"size=4k ovr=0.44
+2 2.87
+4 2.96
+8 3.27
+16 3.19
+24 1.13
+32 3.60
+64 3.76
+96 4.93
+
+"size=8k ovr=0.53
+2 3.13
+4 3.38
+8 3.55
+16 3.65
+24 3.40
+32 1.27
+64 3.47
+96 6.20
+
+"size=16k ovr=0.74
+2 3.10
+4 3.43
+8 3.24
+16 5.35
+24 5.52
+32 4.65
+64 3.89
+96 5.03
+
+"size=32k ovr=1.24
+2 3.13
+4 2.29
+8 1.62
+16 3.66
+24 1.35
+32 3.99
+64 5.92
+96 6.58
+
+"size=64k ovr=2.12
+2 3.52
+4 2.84
+8 1.96
+16 4.21
+24 5.22
+32 5.84
+64 8.44
+96 8.94
+
+Usage: tlb [-c] [-L <line size>] [-M len[K|M]] [-W <warmup>] [-N <repetitions>]
+
+Memory load parallelism
+Usage: par_mem [-L <line size>] [-M len[K|M]] [-W <warmup>] [-N <repetitions>]
+
+STREAM copy latency: 1.15 nanoseconds
+STREAM copy bandwidth: 13861.84 MB/sec
+STREAM scale latency: 1.15 nanoseconds
+STREAM scale bandwidth: 13904.33 MB/sec
+STREAM add latency: 1.55 nanoseconds
+STREAM add bandwidth: 15436.63 MB/sec
+STREAM triad latency: 1.57 nanoseconds
+STREAM triad bandwidth: 15252.08 MB/sec
+STREAM2 fill latency: 0.77 nanoseconds
+STREAM2 fill bandwidth: 10448.66 MB/sec
+STREAM2 copy latency: 1.15 nanoseconds
+STREAM2 copy bandwidth: 13856.86 MB/sec
+STREAM2 daxpy latency: 1.23 nanoseconds
+STREAM2 daxpy bandwidth: 19478.51 MB/sec
+STREAM2 sum latency: 0.80 nanoseconds
+STREAM2 sum bandwidth: 10035.28 MB/sec
+
+Memory load latency
+"stride=16
+0.00049 1.006
+0.00098 1.006
+0.00195 1.006
+0.00293 1.006
+0.00391 1.006
+0.00586 1.006
+0.00781 1.006
+0.01172 1.006
+0.01562 1.007
+0.02344 1.007
+0.03125 1.010
+0.04688 1.406
+0.06250 1.390
+0.09375 1.390
+0.12500 1.390
+0.18750 1.392
+0.25000 1.428
+0.37500 1.439
+0.50000 1.445
+0.75000 1.447
+1.00000 1.447
+1.50000 1.447
+2.00000 1.446
+3.00000 1.442
+4.00000 1.461
+6.00000 1.581
+8.00000 1.746
+12.00000 2.019
+16.00000 2.123
+24.00000 2.162
+32.00000 2.197
+48.00000 2.263
+64.00000 2.225
+96.00000 2.238
+128.00000 2.246
+192.00000 2.339
+256.00000 2.244
+384.00000 2.245
+512.00000 2.243
+
+"stride=32
+0.00049 1.006
+0.00098 1.006
+0.00195 1.006
+0.00293 1.006
+0.00391 1.006
+0.00586 1.006
+0.00781 1.006
+0.01172 1.006
+0.01562 1.007
+0.02344 1.008
+0.03125 1.018
+0.04688 2.137
+0.06250 2.135
+0.09375 2.257
+0.12500 2.137
+0.18750 2.283
+0.25000 2.290
+0.37500 2.301
+0.50000 2.306
+0.75000 2.305
+1.00000 2.305
+1.50000 2.305
+2.00000 2.303
+3.00000 2.305
+4.00000 2.329
+6.00000 2.463
+8.00000 2.649
+12.00000 2.930
+16.00000 3.099
+24.00000 3.242
+32.00000 3.314
+48.00000 3.353
+64.00000 3.487
+96.00000 3.392
+128.00000 3.435
+192.00000 3.390
+256.00000 3.397
+384.00000 3.393
+512.00000 3.395
+
+"stride=64
+0.00049 1.006
+0.00098 1.006
+0.00195 1.006
+0.00293 1.006
+0.00391 1.006
+0.00586 1.006
+0.00781 1.006
+0.01172 1.006
+0.01562 1.007
+0.02344 1.007
+0.03125 1.023
+0.04688 3.024
+0.06250 3.018
+0.09375 3.030
+0.12500 3.032
+0.18750 3.140
+0.25000 3.113
+0.37500 3.176
+0.50000 3.189
+0.75000 3.208
+1.00000 3.194
+1.50000 3.189
+2.00000 3.214
+3.00000 3.218
+4.00000 3.236
+6.00000 3.596
+8.00000 4.193
+12.00000 4.903
+16.00000 5.354
+24.00000 6.006
+32.00000 5.785
+48.00000 5.841
+64.00000 5.882
+96.00000 5.938
+128.00000 5.967
+192.00000 6.021
+256.00000 5.902
+384.00000 5.949
+512.00000 5.882
+
+"stride=128
+0.00049 1.006
+0.00098 1.006
+0.00195 1.006
+0.00293 1.006
+0.00391 1.006
+0.00586 1.006
+0.00781 1.006
+0.01172 1.006
+0.01562 1.006
+0.02344 1.007
+0.03125 1.007
+0.04688 4.359
+0.06250 4.652
+0.09375 4.407
+0.12500 5.481
+0.18750 5.195
+0.25000 4.611
+0.37500 4.238
+0.50000 4.418
+0.75000 4.340
+1.00000 4.411
+1.50000 4.338
+2.00000 4.338
+3.00000 4.450
+4.00000 4.510
+6.00000 6.080
+8.00000 10.080
+12.00000 12.636
+16.00000 13.947
+24.00000 14.854
+32.00000 15.169
+48.00000 15.025
+64.00000 15.435
+96.00000 15.442
+128.00000 15.595
+192.00000 15.633
+256.00000 15.653
+384.00000 15.947
+512.00000 15.961
+
+"stride=256
+0.00049 1.006
+0.00098 1.006
+0.00195 1.006
+0.00293 1.006
+0.00391 1.006
+0.00586 1.006
+0.00781 1.006
+0.01172 1.006
+0.01562 1.006
+0.02344 1.006
+0.03125 1.007
+0.04688 3.019
+0.06250 3.018
+0.09375 3.020
+0.12500 3.022
+0.18750 5.375
+0.25000 6.785
+0.37500 8.641
+0.50000 9.069
+0.75000 8.999
+1.00000 9.065
+1.50000 8.925
+2.00000 8.787
+3.00000 8.754
+4.00000 9.801
+6.00000 16.672
+8.00000 15.936
+12.00000 27.162
+16.00000 34.004
+24.00000 39.846
+32.00000 42.342
+48.00000 44.574
+64.00000 46.141
+96.00000 47.051
+128.00000 47.635
+192.00000 47.561
+256.00000 47.118
+384.00000 47.132
+512.00000 46.814
+
+"stride=512
+0.00049 1.006
+0.00098 1.006
+0.00195 1.006
+0.00293 1.006
+0.00391 1.006
+0.00586 1.006
+0.00781 1.006
+0.01172 1.006
+0.01562 1.006
+0.02344 1.006
+0.03125 1.006
+0.04688 3.018
+0.06250 3.018
+0.09375 3.019
+0.12500 3.022
+0.18750 5.523
+0.25000 7.164
+0.37500 9.023
+0.50000 8.801
+0.75000 8.996
+1.00000 9.429
+1.50000 9.163
+2.00000 9.164
+3.00000 9.387
+4.00000 11.065
+6.00000 13.513
+8.00000 19.241
+12.00000 32.385
+16.00000 40.915
+24.00000 49.255
+32.00000 63.013
+48.00000 58.804
+64.00000 59.944
+96.00000 62.296
+128.00000 62.036
+192.00000 62.450
+256.00000 63.348
+384.00000 63.055
+512.00000 63.035
+
+"stride=1024
+0.00098 1.006
+0.00195 1.006
+0.00293 1.006
+0.00391 1.006
+0.00586 1.006
+0.00781 1.006
+0.01172 1.006
+0.01562 1.006
+0.02344 1.006
+0.03125 1.006
+0.04688 3.017
+0.06250 3.018
+0.09375 3.019
+0.12500 4.705
+0.18750 5.033
+0.25000 7.156
+0.37500 8.898
+0.50000 9.280
+0.75000 9.662
+1.00000 9.300
+1.50000 9.417
+2.00000 9.673
+3.00000 9.423
+4.00000 9.470
+6.00000 13.525
+8.00000 20.827
+12.00000 32.387
+16.00000 39.998
+24.00000 46.402
+32.00000 49.144
+48.00000 53.282
+64.00000 54.189
+96.00000 56.286
+128.00000 55.863
+192.00000 57.056
+256.00000 56.497
+384.00000 56.780
+512.00000 56.090
+
+
+Random load latency
+"stride=16
+0.00049 1.006
+0.00098 1.006
+0.00195 1.007
+0.00293 1.006
+0.00391 1.006
+0.00586 1.006
+0.00781 1.006
+0.01172 1.006
+0.01562 1.007
+0.02344 1.007
+0.03125 1.067
+0.04688 3.021
+0.06250 3.020
+0.09375 3.025
+0.12500 5.194
+0.18750 6.336
+0.25000 7.681
+0.37500 9.952
+0.50000 10.522
+0.75000 11.174
+1.00000 11.194
+1.50000 10.954
+2.00000 11.568
+3.00000 14.413
+4.00000 18.369
+6.00000 25.928
+8.00000 37.341
+12.00000 55.841
+16.00000 69.559
+24.00000 76.020
+32.00000 92.000
+48.00000 83.635
+64.00000 86.919
+96.00000 84.780
+128.00000 84.270
+192.00000 84.390
+256.00000 83.894
+384.00000 83.139
+512.00000 84.393
+
+
+
+[Thu Jun 1 00:14:50 MDT 2017]
