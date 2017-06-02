@@ -4,7 +4,6 @@ sudo qemu-system-x86_64 \
 -m size=1G,slots=1,maxmem=2G \
 -boot c \
 -drive file=/dev/vdb,index=0,media=disk,format=raw,cache=none,if=virtio \
--hda /dev/vdb \
 -cpu qemu64,+x2apic,+vmx \
 -machine accel=kvm \
 -smp 8 \
