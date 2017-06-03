@@ -1,6 +1,6 @@
 #!/bin/bash
 numRuns=5
-tag=_L0
+tag=_L1
 min=1
 max=128
 base=2
@@ -77,7 +77,7 @@ do
 			removeFiles
 			currTime=$(date +"%H-%M-%S")
 			echo -e "time before test: $currTime"
-			sudo $runProg $myTest 1> $tempCopy 2>> $errorLog
+			$runProg $myTest 1> $tempCopy 2>> $errorLog
 			currTime=$(date +"%H-%M-%S")
 			echo -e "time after test: $currTime"
 			removeFiles
