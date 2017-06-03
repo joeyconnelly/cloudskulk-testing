@@ -1,6 +1,6 @@
 #!/bin/bash
 
-tag=level1
+tag=level0
 header="LMBench FINISHED: $tag"
 email=joeyconnelly@u.boisestate.edu
 file=/tmp/email.txt
