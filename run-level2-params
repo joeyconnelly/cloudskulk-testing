@@ -12,5 +12,5 @@ sudo qemu-system-x86_64 \
 -device virtio-net-pci,netdev=netLevel2 \
 -netdev user,id=netLevel2,hostfwd=tcp::5022-:22
 
-rm -f ~/.ssh/known_hosts && ssh -p 5022 level1@localhost
+rm -f ~/.ssh/known_hosts && ssh -p 5022 level2@localhost
 
