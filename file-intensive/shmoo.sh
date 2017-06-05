@@ -1,6 +1,6 @@
 #!/bin/bash
 numRuns=5
-tag=_L1
+tag=_L2
 min=1
 max=128
 base=2
