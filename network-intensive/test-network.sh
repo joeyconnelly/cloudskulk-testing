@@ -1,10 +1,8 @@
 #!/bin/bash
 
-enableDownload=false
-numRuns=10
-tag=host-avg
-#tag=level1-avg-e1000
-#tag=level2-avg
+enableDownload=true
+numRuns=5
+tag=gold_L2
 file="$tag-network-timing.data"
 temp=net-trash.data
 err=net-error.data
@@ -28,11 +26,14 @@ echo -e $tag > $repoDir/$file
 if [ ! -f /$HOME/$version$download -a "$enableDownload" = true ];then
 	echo -e "Downloading benchmark now..."
 	cd $HOME
+##
+## netperf website has been down unable to download benchmark.
+##
 #	wget $link
 #	if [ $? -eq 0 ];then
 #		echo -e "Download successfull.\nInstalling benchmark..."
 #	else
-		echo -e "Download issues...\nInstalling benchmark from backup..."
+#		echo -e "Download issues...\nInstalling benchmark from backup..."
 		cp $repoDir/$version$download $HOME
 #	fi
 	tar -xvzf $version$download
