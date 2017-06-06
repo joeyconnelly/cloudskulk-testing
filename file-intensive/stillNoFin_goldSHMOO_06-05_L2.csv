@@ -1,0 +1,16 @@
+06-05-2017_15-12-28
+Run[#],TestType[test.f],Files[#],TotalSize[MB],TotalOps[#],Throughput[ops/s],Latency[ms/op]
+0,adjust_fileserver.f,50000,48.828MB,28256,436.143,237.3
+0,adjust_fileserver.f,50000,48.828MB,33586,519.577,176.1
+0,adjust_fileserver.f,50000,48.828MB,18329,271.902,210.0
+0,adjust_fileserver.f,50000,48.828MB,26737,392.651,210.5
+0,adjust_fileserver.f,50000,48.828MB,12750,195.441,201.6
+1,adjust_fileserver.f,50000,97.656MB,30438,458.367,213.3
+1,adjust_fileserver.f,50000,97.656MB,4745,73.174,465.9
+1,adjust_fileserver.f,50000,97.656MB,8526,133.518,418.7
+1,adjust_fileserver.f,50000,97.656MB,12049,180.587,275.1
+1,adjust_fileserver.f,50000,97.656MB,8428,132.981,356.0
+2,adjust_fileserver.f,50000,195.312MB,11795,187.141,271.6
+2,adjust_fileserver.f,50000,195.312MB,7843,120.135,331.0
+2,adjust_fileserver.f,50000,195.312MB,3515,55.290,672.1
+2,adjust_fileserver.f,50000,195.312MB,8508,120.799,382.4
