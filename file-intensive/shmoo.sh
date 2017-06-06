@@ -1,6 +1,6 @@
 #!/bin/bash
-numRuns=1
-tag=_L2
+numRuns=5
+tag=_L2_justVarMail
 min=1
 max=128
 base=2
@@ -14,8 +14,8 @@ outputText="IO Summary:"
 runProg="/usr/local/bin/filebench -f"
 declare -a testFiles=(
 	"adjust_varmail.f"
-	"adjust_webserver.f"
-	"adjust_fileserver.f"
+#	"adjust_webserver.f"
+#	"adjust_fileserver.f"
 )
 dir=testing
 declare -a benchFiles=(
