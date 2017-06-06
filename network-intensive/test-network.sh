@@ -2,7 +2,7 @@
 
 enableDownload=true
 numRuns=5
-tag=gold_L1
+tag=gold_L0
 file="$tag-network-timing.data"
 temp=net-trash.data
 err=net-error.data
