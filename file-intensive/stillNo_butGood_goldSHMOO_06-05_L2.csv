@@ -1,0 +1,15 @@
+06-05-2017_19-27-10
+Run[#],TestType[test.f],Files[#],TotalSize[MB],TotalOps[#],Throughput[ops/s],Latency[ms/op]
+0,adjust_varmail.f,50000,48.828MB,13434,218.955,183.9
+1,adjust_varmail.f,50000,97.656MB,32222,535.549,88.3
+2,adjust_varmail.f,50000,195.312MB,45788,760.941,66.7
+3,adjust_varmail.f,50000,390.625MB,28977,480.985,96.8
+4,adjust_varmail.f,50000,781.250MB,21185,352.816,145.8
+5,adjust_varmail.f,50000,1562.500MB,26879,447.889,115.7
+6,adjust_varmail.f,50000,3125.000MB,23472,391.122,132.8
+7,adjust_varmail.f,50000,6250.000MB,20245,337.347,153.3
+0,adjust_webserver.f,50000,48.828MB,1248,10.821,3531.6
+1,adjust_webserver.f,50000,97.656MB,0,0.000,0.0
+2,adjust_webserver.f,50000,195.312MB,299,4.534,551.1
+3,adjust_webserver.f,50000,390.625MB,11,0.172,5052.9
+4,adjust_webserver.f,50000,781.250MB,204,3.155,2887.9
