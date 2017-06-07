@@ -1,7 +1,7 @@
 #!/bin/bash
 numRuns=5
-tag=_L2_justWebServer
-min=1
+tag=_L2_justFileServer_128k
+min=128
 max=128
 base=2
 fileName=goldSHMOO_
@@ -14,8 +14,8 @@ outputText="IO Summary:"
 runProg="/usr/local/bin/filebench -f"
 declare -a testFiles=(
 #	"adjust_varmail.f"
-	"adjust_webserver.f"
-#	"adjust_fileserver.f"
+#	"adjust_webserver.f"
+	"adjust_fileserver.f"
 )
 dir=testing
 declare -a benchFiles=(
