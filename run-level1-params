@@ -17,20 +17,6 @@ sudo qemu-system-x86_64 \
 rm -f ~/.ssh/known_hosts && ssh -p 5022 level1@localhost
 
 
-
-qemu-system-x86_64 \
--name level1 \
--m size=1G,slots=1,maxmem=2G \
--boot c \
--drive file=/home/jconnell/diskL1.raw,index=0,media=disk,format=raw,cache=none,if=virtio \
--cpu qemu64,+x2apic,+vmx \
--machine accel=kvm \
--smp 8 \
--curses \
--serial stdio \
--device virtio-net-pci,netdev=netLevel1 \
--netdev user,id=netLevel1,hostfwd=tcp::5022-:22
-
 qemu-system-x86_64 \
 -name level1 \
 -m size=1G,slots=1,maxmem=2G \

@@ -1,10 +1,7 @@
 #!/bin/bash
-insideVM=false
-numRuns=10
-tag=_host
-#tag=_level1
-#tag=_level2_run1
-fileName=LAST_
+numRuns=1
+tag=_L1
+fileName=MIGRATION_
 tempCopy=temp
 errorLog=errFile.log
 pathText='set $dir='
@@ -13,9 +10,9 @@ inputText="bigfileset populated:"
 outputText="IO Summary:"
 runProg="/usr/local/bin/filebench -f"
 declare -a ranges=(
-	"64k"
-	"16k"
-	"2k"
+	"128k"
+	"32k"
+	"32k"
 )
 declare -a testFiles=(
 	"final_fileserver.f"
@@ -26,7 +23,6 @@ dir=testing
 declare -a benchFiles=(
 	"$HOME/$dir/bigfileset"
 	"$HOME/$dir/logfiles"
-	"/tmp/filebench-shm*"
 )
 quickPrint(){
 	echo -e "$1"
@@ -34,9 +30,6 @@ quickPrint(){
 }
 removeFiles(){
 	rm -rf ${benchFiles[0]} ${benchFiles[1]}
-	if [ "$insideVM" = true ];then
-		rm -f ${benchFiles[2]}
-	fi
 }
 
 #

@@ -1,13 +1,17 @@
 #!/bin/bash
 
-./img_create.sh
+disk=diskL1.raw
+copy=copyDisk.raw
 
-qemu-system-x86_64 -name migSource -m size=512M,slots=1,maxmem=1024M -boot order=c -drive file=/tmp/guest-imgs/diskRaw-60G.img,media=disk,format=raw,cache=writeback,aio=threads,if=virtio -machine type=pc-i440fx-2.3 -cpu Nehalem -enable-kvm -vga qxl -show-cursor -device virtio-net-pci,netdev=netSource -netdev user,id=netSource -monitor telnet:0:5555,server,nowait &
+cd $HOME
+rm -f $copy
+qemu-img create -f raw $copy 60G
 
-qemu-system-x86_64 -name mig-L1-Dest -m size=512M,slots=1,maxmem=1024M -boot order=c -drive file=/tmp/guest-imgs/copyRAW-60G.img,media=disk,format=raw,cache=writeback,aio=threads,if=virtio -machine type=pc-i440fx-2.3 -cpu Nehalem -enable-kvm -vga qxl -show-cursor -device virtio-net-pci,netdev=netL1Dest -netdev user,id=netL1Dest -incoming tcp:0:4446 &
+qemu-system-x86_64 -name migration-Source -m size=1G,slots=1,maxmem=2G -boot order=c -drive file=$disk,media=disk,index=0,media=disk,format=raw,cache=none,if=virtio -machine type=pc-i440fx-2.3 -cpu Nehalem,+vmx -enable-kvm -vga std -show-cursor -device virtio-net-pci,netdev=netSource -netdev user,id=netSource -monitor telnet:0:5555,server,nowait &
+
+qemu-system-x86_64 -name migration-Destination -m size=1G,slots=1,maxmem=2G -boot order=c -drive file=$copy,media=disk,index=0,media=disk,format=raw,cache=none,if=virtio -machine type=pc-i440fx-2.3 -cpu Nehalem,+vmx -enable-kvm -vga std -show-cursor -device virtio-net-pci,netdev=netDest -netdev user,id=netDest -incoming tcp:0:4446 &
 
 exit -1
-sleep 15
 
 (
 echo -e "info status"
