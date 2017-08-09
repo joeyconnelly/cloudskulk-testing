@@ -1,11 +1,10 @@
 #!/bin/bash
 
-#
 # Adjustable script parameters.
 #
 TAG=_L0
-FILE_NAME=raw_60G_virtio-net_512to1024M_threads_writeback
-NUM_RUNS=2
+FILE_NAME=FILEBENCH_raw60G_1to2G_virtio-disk_cache-none_cpu8_virtio-net_cfq
+NUM_RUNS=5
 SHMOO_FILE_SIZE=false
 MIN=1
 MAX=128
@@ -48,7 +47,7 @@ removeFiles(){
 }
 
 #
-# Create filebench directories and initial output data files.
+# Create initial output data files/directories.
 #
 rm -rf $HOME/$TEST_DIR
 mkdir $HOME/$TEST_DIR
@@ -57,7 +56,8 @@ rawFile=$FILE_NAME$tagTime$TAG.raw
 csvFile=$FILE_NAME$tagTime$TAG.csv
 errFile=$tagTime$LOG
 startTime=$(date +"%m-%d-%Y_%H-%M-%S")
-title="Run[#],TestType[test.f],Files[#],TotalSize[MB],TotalOps[#],Throughput[ops/s],Latency[ms/op]"
+title="Run[#],TestType[test.f],Files[#],TotalSize[MB],TotalOps[#],
+   Throughput[ops/s],Latency[ms/op]"
 rm -f $errFile
 quickPrint $startTime $csvFile
 quickPrint $title $csvFile
@@ -78,7 +78,7 @@ do
     #
     for (( newSize=$MIN; newSize<=$MAX; newSize*=$BASE ))
     do
-	
+
         #
         # Change file size inside .f file.
         #
@@ -89,13 +89,13 @@ do
         else
             let newSize=$MAX+1
         fi
-		
+
         #
         # Loop single macro, same parameters to collect average.
         #
         for (( testID=0; testID<$NUM_RUNS; testID++ ))
         do
-		
+
             #
             # Execute filebench benchmark.
             #
@@ -115,12 +115,14 @@ do
             totalSize=$(sed "/$INPUT_TXT/!d" $COPY | awk -F ' ' '{print $18}')
             totalOps=$(sed "/$OUTPUT_TXT/!d" $COPY | awk -F ' ' '{print $4}')
             throughPut=$(sed "/$OUTPUT_TXT/!d" $COPY | awk -F ' ' '{print $6}')
-            latency=$(sed "/$OUTPUT_TXT/!d" $COPY | awk -F ' ' '{print $11}' | awk -F "ms/op" '{print $1}')
+            latency=$(sed "/$OUTPUT_TXT/!d" $COPY | awk -F ' ' '{print $11}' | 
+               awk -F "ms/op" '{print $1}')
 
             #
             # Output results to .raw + .csv + console.
             #
-            line="$testID,$currTest,$numFiles,$totalSize,$totalOps,$throughPut,$latency"
+            line="$testID,$currTest,$numFiles,$totalSize,$totalOps,
+               $throughPut,$latency"
             quickPrint $line $csvFile
             cat $COPY >> $rawFile
         done
@@ -128,8 +130,9 @@ do
 done
 
 #
-# Clean unneeded files and save total script execution time for user convience.
+# Clean unneeded files and save total script execution time for user convenience.
 #
 rm -f $COPY
 endTime=$(date +"%m-%d-%Y_%H-%M-%S")
 quickPrint $endTime $csvFile
+
