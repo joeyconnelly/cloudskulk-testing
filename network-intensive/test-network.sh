@@ -1,8 +1,8 @@
 #!/bin/bash
 
 enableDownload=true
-numRuns=5
-tag=gold_L0
+numRuns=1
+tag=MIGRATION_L1
 file="$tag-network-timing.data"
 temp=net-trash.data
 err=net-error.data

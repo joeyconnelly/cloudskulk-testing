@@ -1,0 +1,8 @@
+06-06-2017_18-21-21
+Run[#],TestType[test.f],Files[#],TotalSize[MB],TotalOps[#],Throughput[ops/s],Latency[ms/op]
+0,adjust_fileserver.f,50000,6250.000MB,19985,265.605,481.0
+0,adjust_fileserver.f,50000,6250.000MB,23864,375.528,349.9
+0,adjust_fileserver.f,50000,6250.000MB,21448,326.175,404.6
+0,adjust_fileserver.f,50000,6250.000MB,18217,262.395,484.3
+0,adjust_fileserver.f,50000,6250.000MB,15459,209.372,641.6
+06-06-2017_18-50-56

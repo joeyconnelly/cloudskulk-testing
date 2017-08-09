@@ -3,7 +3,7 @@
 SIZE=60G
 TYPE=raw
 IMG_DIR=guest-imgs
-DIR=/tmp
+DIR=/
 
 #
 # Create Directory for Image Files

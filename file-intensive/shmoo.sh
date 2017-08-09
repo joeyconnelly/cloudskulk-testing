@@ -1,8 +1,8 @@
 #!/bin/bash
-numRuns=1
-tag=_L2
-min=1
-max=128
+numRuns=5
+tag=_L2_justWebServer_32k
+min=32
+max=32
 base=2
 fileName=goldSHMOO_
 tempCopy=temp
@@ -13,9 +13,9 @@ inputText="bigfileset populated:"
 outputText="IO Summary:"
 runProg="/usr/local/bin/filebench -f"
 declare -a testFiles=(
-	"adjust_varmail.f"
+#	"adjust_varmail.f"
 	"adjust_webserver.f"
-	"adjust_fileserver.f"
+#	"adjust_fileserver.f"
 )
 dir=testing
 declare -a benchFiles=(
